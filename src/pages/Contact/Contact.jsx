@@ -38,7 +38,7 @@ export default function Contact() {
               </div>
               <div>
                 <div className="k-card-label">Email</div>
-                <div className="k-card-value">hello@tyneagency.com</div>
+                <div className="k-card-value">hello@tyne.rs</div>
               </div>
             </a>
 
