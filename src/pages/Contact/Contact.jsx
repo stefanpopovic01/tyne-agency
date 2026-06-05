@@ -50,7 +50,7 @@ export default function Contact() {
               </div>
               <div>
                 <div className="k-card-label">Telefon</div>
-                <div className="k-card-value">+381 60 000 0000</div>
+                <div className="k-card-value">+381 69 1258 825</div>
               </div>
             </a>
           </div>
@@ -118,8 +118,8 @@ export default function Contact() {
                     <input id="telefon" name="telefon" type="tel" placeholder="+381 60 000 0000" className="k-input" value={form.telefon} onChange={handle}/>
                   </div>
                   <div className="k-field">
-                    <label className="k-label" htmlFor="kompanija">Naziv kompanije</label>
-                    <input id="kompanija" name="kompanija" type="text" placeholder="Vaša firma d.o.o." className="k-input" value={form.kompanija} onChange={handle}/>
+                    <label className="k-label" htmlFor="kompanija">Sajt kompanije</label>
+                    <input id="kompanija" name="kompanija" type="text" placeholder="www.sajt.com" className="k-input" value={form.kompanija} onChange={handle}/>
                   </div>
                 </div>
 

@@ -299,7 +299,7 @@
 @media (max-width: 560px) {
   .clients { padding: 44px 0 48px; }
   .ticker__item { padding: 0 32px; }
-  .ticker__logo { height: 22px; }
+  .ticker__logo { height: 40px; }
   .bookcall { padding: 64px 0 72px; }
   .bookcall__inner { padding: 0 20px; }
   .bc__title { font-size: 1.9rem; }

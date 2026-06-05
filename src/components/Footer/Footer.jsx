@@ -1,6 +1,6 @@
 import { Link, useNavigate, useLocation } from "react-router-dom";
 import "./Footer.css";
-import logoFull from "../../assets/logo-full.png";
+import logoFull from "../../assets/logo-full-white.png";
 
 const nav = [
   { label: "Početna", type: "home" },
@@ -143,10 +143,8 @@ export default function Footer() {
             </li>
             <li>
               <Link to="/zakazi-call" className="footer__link footer__link--icon">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.8 19.8 0 0 1 1.63 3.4 2 2 0 0 1 3.6 1.22h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.82a16 16 0 0 0 6.29 6.29l.97-.97a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
-                </svg>
-                Zakaži call
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 1 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                Beograd, Srbija
               </Link>
             </li>
           </ul>
@@ -164,7 +162,6 @@ export default function Footer() {
       <div className="footer__bottom">
         <div className="footer__bottom-inner">
           <span className="footer__copy">© {year} Tyne Agency. Sva prava zadržana.</span>
-          <span className="footer__made">Made with <span className="footer__heart">♥</span> for growth</span>
         </div>
       </div>
 

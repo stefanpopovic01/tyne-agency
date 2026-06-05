@@ -12,7 +12,7 @@ const services = [
     tagline: "Uhvati kupca u trenutku namere",
     desc: "Kreiramo i optimizujemo kampanje koje dovode klijente u trenutku kada aktivno traže vaš proizvod ili uslugu. Svaki klik je namera — mi je pretvaramo u konverziju.",
     color: "#0b5bf2",
-    gradient: "linear-gradient(135deg, #0b5bf2 0%, #3b82f6 100%)",
+    gradient: "linear-gradient(135deg, #fbbc04 0%, #fdd663 100%)",
     lightBg: "rgba(11,91,242,0.06)",
     metrics: ["+340%", "ROAS"],
     icon: google
@@ -22,9 +22,9 @@ const services = [
     tag: "Meta Ads",
     tagline: "Facebook & Instagram precizno",
     desc: "Kreiramo kampanje koje stvaraju interesovanje i pretvaraju ga u kupce kroz precizno targetiranje i retargeting. Pratimo korisnika kroz ceo funnel.",
-    color: "#7c3aed",
-    gradient: "linear-gradient(135deg, #7c3aed 0%, #a78bfa 100%)",
-    lightBg: "rgba(124,58,237,0.06)",
+    color: "#0b5bf2",
+    gradient: "linear-gradient(135deg, #0b5bf2 0%, #3b82f6 100%)",
+    lightBg: "rgba(11,91,242,0.06)",
     metrics: ["3.2×", "Conv. Rate"],
     icon: meta
   },

@@ -105,8 +105,8 @@
   background: rgba(255,255,255,0.05);
   border: 1px solid rgba(255,255,255,0.08);
   border-radius: 40px;
-  padding: 10px 20px;
-  font-size: 0.875rem;
+  padding: 20px 25px;
+  font-size: 1rem;
   font-weight: 600;
   color: rgba(255,255,255,0.5);
   cursor: pointer;
@@ -125,8 +125,8 @@
 }
 
 .usluge__tab-icon img {
-  width: 30px;
-  height: 18px;
+  width: 39px;
+  height: 20px;
 }
 
 .usluge__tab:hover {
@@ -165,8 +165,8 @@
 }
 
 .usluge__big-icon {
-  width: 64px;
-  height: 64px;
+  width: 75px;
+  height: 75px;
   border-radius: 18px;
   display: flex;
   align-items: center;
@@ -177,7 +177,7 @@
 
 .usluge__big-icon img {
   width: 43px;
-  height: 33px;
+  height: 37px;
 }
 
 .usluge__tag-pill {

@@ -131,7 +131,9 @@ function FaqItem({ index, q, a, isOpen, onToggle }) {
       </button>
 
       <div className="faq__answer-wrap">
-        <p className="faq__answer">{a}</p>
+        {isOpen && (
+          <p className="faq__answer">{a}</p>
+        )}
       </div>
     </div>
   );

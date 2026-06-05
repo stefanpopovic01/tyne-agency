@@ -130,7 +130,7 @@ export default function Hero() {
               </div>
               <div className="dash-stat">
                 <span className="ds-label">CPA</span>
-                <span className="ds-val ds-val--dn">€8.40</span>
+                <span className="ds-val ds-val--dn">-38%</span>
               </div>
             </div>
           </div>

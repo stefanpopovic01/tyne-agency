@@ -15,6 +15,7 @@ const paketi = [
       "Setup i vođenje kampanja",
       "Kontinuirana optimizacija",
       "Mesečni izveštaj",
+      "Skaliranje"
     ],
     cta: "Zakaži Call",
     featured: false,
@@ -32,7 +33,7 @@ const paketi = [
       "Kompletan marketing funnel",
       "Akvizicija + retargeting",
       "Napredna optimizacija i testiranje",
-      "Strategija skaliranja",
+      "Napredno skaliranje",
     ],
     cta: "Zakaži Call",
     featured: true,

@@ -139,8 +139,8 @@ export default function ScheduleCall() {
                 </div>
 
                 <div className="zc-field">
-                  <label className="zc-label" htmlFor="zc-kompanija">Naziv kompanije</label>
-                  <input id="zc-kompanija" name="kompanija" type="text" placeholder="Vaša firma d.o.o." className="zc-input" value={form.kompanija} onChange={handle}/>
+                  <label className="zc-label" htmlFor="zc-kompanija">Sajt kompanije</label>
+                  <input id="zc-kompanija" name="kompanija" type="text" placeholder="www.sajt.com" className="zc-input" value={form.kompanija} onChange={handle}/>
                 </div>
 
                 <div className="zc-field">
