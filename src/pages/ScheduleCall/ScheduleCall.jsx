@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "./ScheduleCall.css";
 
-// Generate next 14 available days (skip Sundays)
+// Generate next 14 available days (skip Sundays & Saturday)
 function getAvailableDays() {
   const days = [];
   const dayNames = ["Ned", "Pon", "Uto", "Sre", "Čet", "Pet", "Sub"];
@@ -9,11 +9,12 @@ function getAvailableDays() {
   const today = new Date();
   let d = new Date(today);
   d.setDate(d.getDate() + 1);
-  while (days.length < 12) {
-    if (d.getDay() !== 0) { // skip Sunday
+  while (days.length < 15) {
+    const day = d.getDay();
+    if (day !== 0 && day !== 6) { // skip Sunday (0) i Saturday (6)
       days.push({
         date: new Date(d),
-        day: dayNames[d.getDay()],
+        day: dayNames[day],
         num: d.getDate(),
         month: monthNames[d.getMonth()],
       });
@@ -23,7 +24,7 @@ function getAvailableDays() {
   return days;
 }
 
-const timeSlots = ["09:00","10:00","11:00","12:00","14:00","15:00","16:00","17:00"];
+const timeSlots = ["09:00","10:00","11:00","12:00","13:00", "14:00","15:00","16:00"];
 
 const steps = [
   { num: "01", text: "Odaberite datum i vreme" },
@@ -57,9 +58,25 @@ export default function ScheduleCall() {
 
               <form
                 className="zc-form"
-                action=""
-                method="POST"
-                onSubmit={(e) => { e.preventDefault(); if (canSubmit) setSent(true); }}
+                onSubmit={async (e) => {
+                  e.preventDefault();
+                  if (!canSubmit) return;
+
+                  const data = new FormData(e.target);
+
+                  if (selectedDay !== null && selectedTime !== null) {
+                    data.append("datum", `${days[selectedDay].day}, ${days[selectedDay].num}. ${days[selectedDay].month}`);
+                    data.append("vreme", timeSlots[selectedTime]);
+                  }
+
+                  await fetch("https://formspree.io/f/xojzjayl", {
+                    method: "POST",
+                    body: data,
+                    headers: { Accept: "application/json" },
+                  });
+
+                  setSent(true);
+                }}
               >
                 {/* Date picker */}
                 <div className="zc-section-label">Odaberite datum</div>
@@ -146,10 +163,10 @@ export default function ScheduleCall() {
                   <polyline points="20 6 9 17 4 12"/>
                 </svg>
               </div>
-              <h2 className="zc-success-title">Termin zakazan!</h2>
+              <h2 className="zc-success-title">Primili smo vaš zahtev!</h2>
               <p className="zc-success-text">
                 Vidimo se <strong>{days[selectedDay]?.day}, {days[selectedDay]?.num}. {days[selectedDay]?.month}</strong> u <strong>{timeSlots[selectedTime]}</strong>.
-                <br />Poslali smo potvrdu na {form.email}.
+                <br />Kontaktiraćemo vas na {form.email} i potvrditi termin.
               </p>
               <button className="zc-submit" style={{ maxWidth: "240px" }} onClick={() => { setSent(false); setSelectedDay(null); setSelectedTime(null); }}>
                 Zakaži novi termin

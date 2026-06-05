@@ -85,9 +85,23 @@ export default function Contact() {
                 <p className="k-form-sub">Sva polja označena sa * su obavezna.</p>
               </div>
 
-              {/* Zameni action sa Formspree/Formspark URL-om */}
-              <form className="k-form" action="" method="POST" onSubmit={(e) => { e.preventDefault(); setSent(true); }}>
-                <div className="k-row">
+                <form
+                  className="k-form"
+                  onSubmit={async (e) => {
+                    e.preventDefault();
+                    
+                    const data = new FormData(e.target);
+                    
+                    await fetch("https://formspree.io/f/mzdqdpjr", {
+                      method: "POST",
+                      body: data,
+                      headers: { Accept: "application/json" },
+                    });
+
+                    setSent(true);
+                  }}
+                >
+                  <div className="k-row">
                   <div className="k-field">
                     <label className="k-label" htmlFor="ime">Ime i prezime *</label>
                     <input id="ime" name="ime" type="text" required placeholder="Marko Marković" className="k-input" value={form.ime} onChange={handle}/>
