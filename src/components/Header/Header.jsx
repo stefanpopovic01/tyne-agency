@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link, useNavigate, useLocation } from "react-router-dom";
 import "./Header.css";
-import logoFull from "../../assets/logo-full.png";
+import logoFull from "../../assets/logo-full-black.png";
 
 const navLinks = [
   { label: "Početna",  type: "home" },
