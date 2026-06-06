@@ -20,7 +20,7 @@ const services = [
   {
     id: "meta",
     tag: "Meta Ads",
-    tagline: "Facebook & Instagram precizno",
+    tagline: "Facebook & Instagram",
     desc: "Kreiramo kampanje koje stvaraju interesovanje i pretvaraju ga u kupce kroz precizno targetiranje i retargeting. Pratimo korisnika kroz ceo funnel.",
     color: "#0b5bf2",
     gradient: "linear-gradient(135deg, #0b5bf2 0%, #3b82f6 100%)",

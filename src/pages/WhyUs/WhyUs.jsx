@@ -130,7 +130,7 @@ export default function WhyUs() {
         {/* ══ DIVIDER ══ */}
         <div className="zastomi__sep" aria-hidden="true">
           <span className="zastomi__sep-line" />
-          <span className="zastomi__sep-label">Kako radimo ?</span>
+          <span className="zastomi__sep-label">Kako radimo?</span>
           <span className="zastomi__sep-line" />
         </div>
 
