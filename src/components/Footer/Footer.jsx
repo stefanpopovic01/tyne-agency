@@ -9,6 +9,7 @@ const nav = [
   { label: "O nama",  type: "section", sectionId: "o-nama" },
   { label: "FAQ",     type: "section", sectionId: "faq" },
   { label: "Kontakt", type: "route",   to: "/kontakt" },
+  { label: "Portfolio", type: "route",   to: "/portfolio" },
 ];
 
 const socials = [

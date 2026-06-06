@@ -224,6 +224,11 @@
   letter-spacing: 0.01em;
 }
 
+.usluge__panel-cta.portf{
+  margin-left: 15px;
+}
+
+
 .usluge__panel-cta:hover {
   background: var(--pc);
   border-color: var(--pc);
