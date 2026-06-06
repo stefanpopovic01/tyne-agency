@@ -13,6 +13,7 @@ import Home from './pages/Home/Home'
 import ScheduleCall from './pages/ScheduleCall/ScheduleCall'
 import ScrollToTop from './components/ScrollToTop/ScrollToTop'
 import Portfolio from './pages/Portfolio/Portfolio'
+import NotFound from './components/NotFound/Notfound'
 
 import { Routes, Route } from "react-router-dom";
 
@@ -29,6 +30,7 @@ function App() {
         <Route path="/kontakt" element={<Contact />} />
         <Route path="/zakazi-call" element={<ScheduleCall />} />
         <Route path="/portfolio" element={<Portfolio />} />
+        <Route path="*" element={<NotFound />} /> 
       </Routes>
 
       <Footer/>
