@@ -84,12 +84,12 @@ export default function Hero() {
 
           <div className="hero-stats">
             <div className="hero-stat">
-              <span className="stat-num">150+</span>
+              <span className="stat-num">250+</span>
               <span className="stat-label">Kampanja</span>
             </div>
             <div className="stat-divider" />
             <div className="hero-stat">
-              <span className="stat-num">€2M+</span>
+              <span className="stat-num">€1M+</span>
               <span className="stat-label">Ad spend</span>
             </div>
             <div className="stat-divider" />
