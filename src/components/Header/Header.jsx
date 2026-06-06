@@ -7,9 +7,9 @@ const navLinks = [
   { label: "Početna",  type: "home" },
   { label: "Usluge",   type: "section", sectionId: "usluge" },
   { label: "Paketi",   type: "section", sectionId: "paketi" },
+  { label: "Portfolio",  type: "route",   to: "/portfolio" },
   { label: "O nama",   type: "section", sectionId: "o-nama" },
   { label: "Kontakt",  type: "route",   to: "/kontakt" },
-  { label: "Portfolio",  type: "route",   to: "/portfolio" },
 ];
 
 export default function Header() {

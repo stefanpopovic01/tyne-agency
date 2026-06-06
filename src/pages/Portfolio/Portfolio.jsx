@@ -15,7 +15,7 @@ const channels = [
     icon: googleLogo,
     cases: [
       {
-        title: "Google Ads — Search kampanja",
+        // title: "Google Ads — Search kampanja",
         industry: "E-commerce",
         image: googleCase,
         metrics: [
@@ -44,8 +44,8 @@ Kampanja je generisala više od 1,73 miliona RSD vrednosti konverzija, što pred
     icon: metaLogo,
     cases: [
       {
-        title: "Meta Ads — Lead Generation",
-        industry: "Online platformа",
+        // title: "Meta Ads — Lead Generation",
+        industry: "Lead Generation",
         image: metaCase, 
         metrics: [
           { label: "Registracije", value: "2.358" },
@@ -53,7 +53,6 @@ Kampanja je generisala više od 1,73 miliona RSD vrednosti konverzija, što pred
           { label: "Ukupna potrošnja", value: "$5.326" },
           { label: "Impresije", value: "2,86M+" },
           { label: "Doseg", value: "766K+" },
-          { label: "Period", value: "Stabilan rast" },
         ],
         text: `Pre pokretanja kampanja izvršen je kompletan tehnički setup i povezivanje svih relevantnih platformi za precizno praćenje performansi. To je uključivalo implementaciju Meta Pixel-a, Conversions API (CAPI), Google Tag Manager-a (GTM) i Google Analytics 4 (GA4), kao i verifikaciju događaja i testiranje ispravnosti prenosa podataka kako bi optimizacija kampanja bila zasnovana na pouzdanim i tačnim podacima.
 
@@ -91,7 +90,7 @@ export default function Portfolio() {
             <span className="pf-title-em">govore sami za sebe.</span>
           </h1>
           <p className="pf-lead">
-            Konkretni primeri kampanja, brojevi i strategije koje smo primenili.
+            Konkretni primeri kampanja, brojevi i strategije na koje smo ponosni.
           </p>
         </div>
 
