@@ -28,7 +28,7 @@ const razlozi = [
       </svg>
     ),
     title: "Partner, ne izvođač",
-    text: "Radimo kao deo vašeg tima, uloženi u vaš uspeh jednako kao vi.",
+    text: "Radimo kao deo vašeg tima, ulažemo u vaš uspeh jednako kao vi.",
   },
   {
     icon: (
@@ -130,7 +130,7 @@ export default function WhyUs() {
         {/* ══ DIVIDER ══ */}
         <div className="zastomi__sep" aria-hidden="true">
           <span className="zastomi__sep-line" />
-          <span className="zastomi__sep-label">Kako radimo</span>
+          <span className="zastomi__sep-label">Kako radimo ?</span>
           <span className="zastomi__sep-line" />
         </div>
 

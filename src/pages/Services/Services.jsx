@@ -14,7 +14,7 @@ const services = [
     color: "#0b5bf2",
     gradient: "linear-gradient(135deg, #fbbc04 0%, #fdd663 100%)",
     lightBg: "rgba(11,91,242,0.06)",
-    metrics: ["+340%", "ROAS"],
+    metrics: ["+480%", "ROAS"],
     icon: google
   },
   {
