@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import "./Contact.css";
 
 export default function Contact() {
@@ -10,6 +11,8 @@ export default function Contact() {
 
   const handle = (e) =>
     setForm((f) => ({ ...f, [e.target.name]: e.target.value }));
+
+  const navigate = useNavigate();
 
   return (
     <div className="kontakt-page">
@@ -99,6 +102,7 @@ export default function Contact() {
                     });
 
                     setSent(true);
+                    navigate("/contact-success");
                   }}
                 >
                   <div className="k-row">

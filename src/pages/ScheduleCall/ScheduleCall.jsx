@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "./ScheduleCall.css";
 
 // Generate next 14 available days (skip Sundays & Saturday)
@@ -42,6 +43,7 @@ export default function ScheduleCall() {
   const handle = (e) => setForm((f) => ({ ...f, [e.target.name]: e.target.value }));
 
   const canSubmit = selectedDay !== null && selectedTime !== null && form.ime && form.email;
+  const navigate = useNavigate();
 
   return (
     <div className="zc-page">
@@ -76,6 +78,7 @@ export default function ScheduleCall() {
                   });
 
                   setSent(true);
+                  navigate("/success");
                 }}
               >
                 {/* Date picker */}

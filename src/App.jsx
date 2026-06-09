@@ -14,6 +14,8 @@ import ScheduleCall from './pages/ScheduleCall/ScheduleCall'
 import ScrollToTop from './components/ScrollToTop/ScrollToTop'
 import Portfolio from './pages/Portfolio/Portfolio'
 import NotFound from './components/NotFound/Notfound'
+import Success from './pages/Success/Success'
+import ContactSuccess from './pages/ContactSuccess/ContactSuccess'
 
 import { Routes, Route } from "react-router-dom";
 
@@ -30,6 +32,8 @@ function App() {
         <Route path="/kontakt" element={<Contact />} />
         <Route path="/zakazi-call" element={<ScheduleCall />} />
         <Route path="/portfolio" element={<Portfolio />} />
+        <Route path="/success" element={<Success />} />
+        <Route path="/contact-success" element={<ContactSuccess />} />
         <Route path="*" element={<NotFound />} /> 
       </Routes>
 
