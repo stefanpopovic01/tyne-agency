@@ -78,7 +78,7 @@ export default function ScheduleCall() {
                   });
 
                   setSent(true);
-                  navigate("/success");
+                  navigate("/zakazi-call/uspesno");
                 }}
               >
                 {/* Date picker */}

@@ -102,7 +102,7 @@ export default function Contact() {
                     });
 
                     setSent(true);
-                    navigate("/contact-success");
+                    navigate("/kontakt/uspesno");
                   }}
                 >
                   <div className="k-row">

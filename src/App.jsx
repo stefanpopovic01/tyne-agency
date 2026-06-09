@@ -32,8 +32,8 @@ function App() {
         <Route path="/kontakt" element={<Contact />} />
         <Route path="/zakazi-call" element={<ScheduleCall />} />
         <Route path="/portfolio" element={<Portfolio />} />
-        <Route path="/success" element={<Success />} />
-        <Route path="/contact-success" element={<ContactSuccess />} />
+        <Route path="/zakazi-call/uspesno" element={<Success />} />
+        <Route path="/kontakt/uspesno" element={<ContactSuccess />} />
         <Route path="*" element={<NotFound />} /> 
       </Routes>
 
