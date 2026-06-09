@@ -29,7 +29,7 @@ export default function ContactSuccess() {
             Idi na početnu
           </Link>
           <Link to="/kontakt" className="success-btn success-btn--outline">
-            Kontaktiraj nas
+            Nova poruka
           </Link>
         </div>
 
