@@ -133,7 +133,7 @@ export default function Footer() {
         <div className="footer__col">
           <span className="footer__col-title">Kontakt</span>
           <ul className="footer__links">
-            <li>
+            {/* <li>
               <a href="mailto:hello@tyneagency.com" className="footer__link footer__link--icon">
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round">
                   <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
@@ -141,7 +141,7 @@ export default function Footer() {
                 </svg>
                 hello@tyne.rs
               </a>
-            </li>
+            </li> */}
             <li>
               <a href="tel:+381691258825" className="footer__link footer__link--icon">
                 <svg
