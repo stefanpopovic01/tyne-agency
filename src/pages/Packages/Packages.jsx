@@ -5,9 +5,9 @@ const paketi = [
   {
     id: "single",
     badge: null,
-    name: "Single Platform",
+    name: "Jedna platforma",
     sub: "Jedna platforma",
-    price: "300€",
+    price: "299€",
     priceNote: "+ 10% ad budžeta / mesečno",
     desc: "Idealno za firme koje žele stabilan početak i prve rezultate.",
     features: [
@@ -23,9 +23,9 @@ const paketi = [
   {
     id: "fullfunnel",
     badge: "Najpopularnije",
-    name: "Full Funnel",
+    name: "Dve platforme",
     sub: "Dve platforme",
-    price: "500€",
+    price: "499€",
     priceNote: "+ 10% ad budžeta / mesečno",
     desc: "Idealno za firme koje žele ozbiljan i kontinuiran rast.",
     features: [
@@ -89,7 +89,7 @@ export default function Packages() {
               <div className="paket__top">
                 <div className="paket__names">
                   <span className="paket__name">{p.name}</span>
-                  <span className="paket__sub">{p.sub}</span>
+                  {/* <span className="paket__sub">{p.sub}</span> */}
                 </div>
                 <div className="paket__price-wrap">
                   <span className="paket__from">od</span>
