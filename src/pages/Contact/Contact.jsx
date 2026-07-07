@@ -122,8 +122,8 @@ export default function Contact() {
                     <input id="telefon" name="telefon" type="tel" placeholder="+381 60 000 0000" className="k-input" value={form.telefon} onChange={handle}/>
                   </div>
                   <div className="k-field">
-                    <label className="k-label" htmlFor="kompanija">Sajt kompanije</label>
-                    <input id="kompanija" name="kompanija" type="text" placeholder="www.sajt.com" className="k-input" value={form.kompanija} onChange={handle}/>
+                    <label className="k-label" htmlFor="kompanija" >Sajt kompanije *</label>
+                    <input id="kompanija" name="kompanija" type="text" required placeholder="www.sajt.com" className="k-input" value={form.kompanija} onChange={handle}/>
                   </div>
                 </div>
 

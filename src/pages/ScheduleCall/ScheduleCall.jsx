@@ -142,13 +142,13 @@ export default function ScheduleCall() {
                 </div>
 
                 <div className="zc-field">
-                  <label className="zc-label" htmlFor="zc-kompanija">Sajt kompanije</label>
-                  <input id="zc-kompanija" name="kompanija" type="text" placeholder="www.sajt.com" className="zc-input" value={form.kompanija} onChange={handle}/>
+                  <label className="zc-label" htmlFor="zc-kompanija">Sajt kompanije *</label>
+                  <input id="zc-kompanija" name="kompanija" type="text" placeholder="www.sajt.com" className="zc-input" value={form.kompanija} onChange={handle} required/>
                 </div>
 
                 <div className="zc-field">
-                  <label className="zc-label" htmlFor="zc-napomena">Napomena (opciono)</label>
-                  <textarea id="zc-napomena" name="napomena" rows={3} placeholder="Kratko opišite vaš biznis ili šta biste voleli da razgovaramo..." className="zc-input zc-textarea" value={form.napomena} onChange={handle}/>
+                  <label className="zc-label" htmlFor="zc-napomena">Napomena *</label>
+                  <textarea id="zc-napomena" name="napomena" required rows={3} placeholder="Kratko opišite vaš biznis ili šta biste voleli da razgovaramo..." className="zc-input zc-textarea" value={form.napomena} onChange={handle}/>
                 </div>
 
                 <button type="submit" className={`zc-submit${!canSubmit ? " zc-submit--disabled" : ""}`} disabled={!canSubmit}>
