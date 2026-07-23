@@ -1,10 +1,10 @@
 import "./Cta.css";
 import logoFull from "../../assets/logo-full.png";
-import logo1 from '../../assets/client1.png';
-import logo2 from '../../assets/client2.PNG';
-import logo3 from '../../assets/client3.png';
-import logo4 from '../../assets/client4.png';
-import logo5 from '../../assets/client5.png'
+import logo1 from '../../assets/client1.webp';
+import logo2 from '../../assets/client2.webp';
+import logo3 from '../../assets/client3.webp';
+import logo4 from '../../assets/client4.webp';
+import logo5 from '../../assets/client5.webp';
 import { Link } from "react-router-dom";
 
 const LOGOS = [logo1, logo2, logo3, logo4, logo5]
@@ -35,7 +35,7 @@ export default function CTA() {
           <div className="ticker__track">
             {[...LOGOS, ...LOGOS].map((src, i) => (
               <div className="ticker__item" key={i}>
-                <img src={src} alt="klijent" className="ticker__logo" />
+                <img src={src} alt="klijent" loading="lazy" className="ticker__logo" />
               </div>
             ))}
           </div>

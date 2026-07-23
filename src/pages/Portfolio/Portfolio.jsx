@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "./Portfolio.css";
-import googleCase from "../../assets/p-google1.png";
-import metaCase from "../../assets/p-meta1.png";
+import googleCase from "../../assets/p-google1.webp";
+import metaCase from "../../assets/p-meta1.webp";
 import metaLogo from "../../assets/meta.png";
 import googleLogo from "../../assets/google.png";
 
