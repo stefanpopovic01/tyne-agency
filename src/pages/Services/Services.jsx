@@ -4,9 +4,10 @@ import { Link } from "react-router-dom";
 
 import meta from "../../assets/meta.png";
 import google from "../../assets/google.png";
+import web from '../../assets/web-logo.png';
 
 const services = [
-  {
+{
     id: "google",
     tag: "Google Ads",
     tagline: "Uhvati kupca u trenutku namere",
@@ -15,6 +16,7 @@ const services = [
     gradient: "linear-gradient(135deg, #fbbc04 0%, #fdd663 100%)",
     lightBg: "rgba(11,91,242,0.06)",
     metrics: ["+480%", "ROAS"],
+    features: ["Analiza i strategija", "Setup & kreativa", "A/B testiranje", "Mesečni reporting"],
     icon: google
   },
   {
@@ -26,7 +28,20 @@ const services = [
     gradient: "linear-gradient(135deg, #0b5bf2 0%, #3b82f6 100%)",
     lightBg: "rgba(11,91,242,0.06)",
     metrics: ["3.2×", "Conv. Rate"],
+    features: ["Analiza i strategija", "Setup & kreativa", "A/B testiranje", "Mesečni reporting"],
     icon: meta
+  },
+  {
+    id: "web-development",
+    tag: "Web Development",
+    tagline: "Sajtovi · Web aplikacije",
+    desc: "Razvijamo brze, moderne i skalabilne web sajtove i aplikacije prilagođene vašem poslovanju. Čist kod, promišljen dizajn i performanse koje se osećaju.",
+    color: "#0891b2",
+    gradient: "linear-gradient(135deg, #0891b2 0%, #22d3ee 100%)",
+    lightBg: "rgba(8,145,178,0.06)",
+    metrics: ["+180%", "Konverzije"],
+    features: ["UX/UI dizajn", "Razvoj i integracije", "Testiranje i optimizacija", "Podrška i održavanje"],
+    icon: web
   },
   // {
   //   id: "tiktok",
@@ -164,8 +179,8 @@ export default function Services() {
               </div>
 
               {/* Mini feature list */}
-              <div className="usluge__features">
-                {["Analiza i strategija", "Setup & kreativa", "A/B testiranje", "Mesečni reporting"].map((f, i) => (
+            <div className="usluge__features">
+                {s.features.map((f, i) => (
                   <div key={i} className="usluge__feature" style={{ "--fi": i, "--fc": s.color }}>
                     <span className="usluge__feature-check">
                       <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
