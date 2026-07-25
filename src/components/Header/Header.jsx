@@ -2,21 +2,38 @@ import { useState, useEffect } from "react";
 import { Link, useNavigate, useLocation } from "react-router-dom";
 import "./Header.css";
 import logoFull from "../../assets/logo-full-black.png";
+import { useLanguage } from "../../i18n/LanguageContext";
 
-const navLinks = [
-  { label: "Početna",  type: "home" },
-  { label: "Usluge",   type: "section", sectionId: "usluge" },
-  { label: "Paketi",   type: "section", sectionId: "paketi" },
-  { label: "Portfolio",  type: "route",   to: "/portfolio" },
-  { label: "O nama",   type: "section", sectionId: "o-nama" },
-  { label: "Kontakt",  type: "route",   to: "/kontakt" },
-];
+function LangSwitch({ lang, toggleLanguage, label, className }) {
+  return (
+    <button
+      type="button"
+      className={`header__lang${className ? ` ${className}` : ""}`}
+      onClick={toggleLanguage}
+      aria-label={label}
+    >
+      <span className={`header__lang-option${lang === "sr" ? " header__lang-option--on" : ""}`}>SR</span>
+      <span className={`header__lang-option${lang === "en" ? " header__lang-option--on" : ""}`}>EN</span>
+      <span className={`header__lang-thumb${lang === "en" ? " header__lang-thumb--right" : ""}`} aria-hidden="true" />
+    </button>
+  );
+}
 
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const navigate = useNavigate();
   const location = useLocation();
+  const { lang, toggleLanguage, t } = useLanguage();
+
+  const navLinks = [
+    { label: t.header.navHome, type: "home" },
+    { label: t.header.navServices, type: "section", sectionId: "usluge" },
+    { label: t.header.navPackages, type: "section", sectionId: "paketi" },
+    { label: t.header.navPortfolio, type: "route", to: "/portfolio" },
+    { label: t.header.navAbout, type: "section", sectionId: "o-nama" },
+    { label: t.header.navContact, type: "route", to: "/kontakt" },
+  ];
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
@@ -66,7 +83,8 @@ export default function Header() {
   };
 
   return (
-    <header className={`header${scrolled ? " header--scrolled" : ""}`}>
+    <>
+    <header className={`header${scrolled ? " header--scrolled" : ""}${menuOpen ? " header--menu-open" : ""}`}>
       <div className="header__inner">
 
         <Link to="/" className="header__logo" onClick={() => setMenuOpen(false)}>
@@ -96,14 +114,16 @@ export default function Header() {
           )}
         </nav>
 
+        <LangSwitch lang={lang} toggleLanguage={toggleLanguage} label={t.header.langSwitchLabel} />
+
         <Link to="/zakazi-call" className="header__cta" onClick={() => setMenuOpen(false)}>
-          Zakaži Call
+          {t.header.ctaBook}
         </Link>
 
         <button
           className={`header__burger${menuOpen ? " header__burger--open" : ""}`}
           onClick={() => setMenuOpen((v) => !v)}
-          aria-label="Otvori meni"
+          aria-label={t.header.openMenu}
         >
           <span />
           <span />
@@ -137,9 +157,16 @@ export default function Header() {
           className="header__cta header__cta--mobile"
           onClick={() => setMenuOpen(false)}
         >
-          Zakaži Call
+          {t.header.ctaBook}
         </Link>
       </div>
     </header>
+
+    <div
+      className={`header__scrim${menuOpen ? " header__scrim--open" : ""}`}
+      onClick={() => setMenuOpen(false)}
+      aria-hidden="true"
+    />
+    </>
   );
 }

@@ -1,46 +1,38 @@
 import { useState } from "react";
 import "./Services.css";
 import { Link } from "react-router-dom";
+import { useLanguage } from "../../i18n/LanguageContext";
 
 import meta from "../../assets/meta.png";
 import google from "../../assets/google.png";
 import web from '../../assets/web-logo.png';
 
-const services = [
+const serviceMeta = [
 {
     id: "google",
     tag: "Google Ads",
-    tagline: "Uhvati kupca u trenutku namere",
-    desc: "Kreiramo i optimizujemo kampanje koje dovode klijente u trenutku kada aktivno traže vaš proizvod ili uslugu. Svaki klik je namera — mi je pretvaramo u konverziju.",
     color: "#0b5bf2",
     gradient: "linear-gradient(135deg, #fbbc04 0%, #fdd663 100%)",
     lightBg: "rgba(11,91,242,0.06)",
-    metrics: ["+480%", "ROAS"],
-    features: ["Analiza i strategija", "Setup & kreativa", "A/B testiranje", "Mesečni reporting"],
+    metricValue: "+480%",
     icon: google
   },
   {
     id: "meta",
     tag: "Meta Ads",
-    tagline: "Facebook & Instagram",
-    desc: "Kreiramo kampanje koje stvaraju interesovanje i pretvaraju ga u kupce kroz precizno targetiranje i retargeting. Pratimo korisnika kroz ceo funnel.",
     color: "#0b5bf2",
     gradient: "linear-gradient(135deg, #0b5bf2 0%, #3b82f6 100%)",
     lightBg: "rgba(11,91,242,0.06)",
-    metrics: ["3.2×", "Conv. Rate"],
-    features: ["Analiza i strategija", "Setup & kreativa", "A/B testiranje", "Mesečni reporting"],
+    metricValue: "3.2×",
     icon: meta
   },
   {
     id: "web-development",
     tag: "Web Development",
-    tagline: "Sajtovi · Web aplikacije",
-    desc: "Razvijamo brze, moderne i skalabilne web sajtove i aplikacije prilagođene vašem poslovanju. Čist kod, promišljen dizajn i performanse koje se osećaju.",
     color: "#0891b2",
     gradient: "linear-gradient(135deg, #0891b2 0%, #22d3ee 100%)",
     lightBg: "rgba(8,145,178,0.06)",
-    metrics: ["+180%", "Konverzije"],
-    features: ["UX/UI dizajn", "Razvoj i integracije", "Testiranje i optimizacija", "Podrška i održavanje"],
+    metricValue: "+180%",
     icon: web
   },
   // {
@@ -81,7 +73,13 @@ const services = [
 ];
 
 export default function Services() {
+  const { t } = useLanguage();
   const [active, setActive] = useState(0);
+  const services = serviceMeta.map((m, i) => ({
+    ...m,
+    ...t.services.items[i],
+    metrics: [m.metricValue, t.services.items[i].metricLabel],
+  }));
   const s = services[active];
 
   return (
@@ -96,14 +94,13 @@ export default function Services() {
 
         {/* Header */}
         <div className="usluge__header">
-          <span className="usluge__eyebrow">Usluge</span>
+          <span className="usluge__eyebrow">{t.services.eyebrow}</span>
           <h2 className="usluge__title">
-            Svaki kanal.<br />
-            <span className="usluge__title-em">Maksimalan efekat.</span>
+            {t.services.titleLine1}<br />
+            <span className="usluge__title-em">{t.services.titleEm}</span>
           </h2>
           <p className="usluge__lead">
-            Biramo kanale koji imaju smisla za vaš biznis —
-            i izvlačimo iz njih sve.
+            {t.services.lead}
           </p>
         </div>
 
@@ -152,14 +149,14 @@ export default function Services() {
             <p className="usluge__panel-desc">{s.desc}</p>
 
             <Link to='/zakazi-call' className="usluge__panel-cta" style={{ "--pc": s.color }}>
-              Pokreni kampanju
+              {t.services.ctaCampaign}
               <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
                 <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/>
               </svg>
             </Link>
-        
+
             <Link to='/portfolio' className="usluge__panel-cta portf" style={{ "--pc": s.color }}>
-              Portfolio
+              {t.services.ctaPortfolio}
               <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
                 <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/>
               </svg>

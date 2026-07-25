@@ -1,7 +1,9 @@
 import { Link } from "react-router-dom";
 import "./Success.css";
+import { useLanguage } from "../../i18n/LanguageContext";
 
 export default function Success() {
+  const { t } = useLanguage();
   return (
     <div className="success-page">
 
@@ -18,20 +20,20 @@ export default function Success() {
           </svg>
         </div>
 
-        <h1 className="success-title">Primili smo vaš zahtev!</h1>
+        <h1 className="success-title">{t.success.title}</h1>
 
         <p className="success-desc">
-          Kontaktiraćemo vas na vašu email adresu i potvrditi termin.
+          {t.success.desc}
           <br />
-          Odgovaramo u roku od 24h.
+          {t.success.descLine2}
         </p>
 
         <div className="success-actions">
           <Link to="/" className="success-btn success-btn--primary">
-            Idi na početnu
+            {t.success.btnHome}
           </Link>
           <Link to="/kontakt" className="success-btn success-btn--outline">
-            Kontaktiraj nas
+            {t.success.btnContact}
           </Link>
         </div>
 

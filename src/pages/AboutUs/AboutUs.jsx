@@ -1,37 +1,22 @@
 import "./AboutUs.css";
 import { Link } from "react-router-dom";
+import { useLanguage } from "../../i18n/LanguageContext";
 
-const pillars = [
-  {
-    icon: (
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M3 3v18h18"/><path d="M7 16l4-6 4 4 4-7"/>
-      </svg>
-    ),
-    label: "Podaci prvo",
-    desc: "Svaka odluka potkrepljena je brojevima, ne pretpostavkama.",
-  },
-  {
-    icon: (
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round">
-        <circle cx="12" cy="12" r="3"/><path d="M12 2v3m0 14v3M2 12h3m14 0h3m-3.3-6.7-2.1 2.1M8.4 15.6l-2.1 2.1m0-11.4 2.1 2.1m5.1 5.1 2.1 2.1"/>
-      </svg>
-    ),
-    label: "Kontinuirana optimizacija",
-    desc: "Kampanje se ne puštaju i zaboravljaju — pratimo, testiramo i unapređujemo.",
-  },
-  {
-    icon: (
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/><path d="M8 12l2.5 2.5L16 9"/>
-      </svg>
-    ),
-    label: "Prilagođen pristup",
-    desc: "Nema generičkih rešenja — strategija se gradi oko vašeg biznisa.",
-  },
+const pillarIcons = [
+  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M3 3v18h18"/><path d="M7 16l4-6 4 4 4-7"/>
+  </svg>,
+  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round">
+    <circle cx="12" cy="12" r="3"/><path d="M12 2v3m0 14v3M2 12h3m14 0h3m-3.3-6.7-2.1 2.1M8.4 15.6l-2.1 2.1m0-11.4 2.1 2.1m5.1 5.1 2.1 2.1"/>
+  </svg>,
+  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/><path d="M8 12l2.5 2.5L16 9"/>
+  </svg>,
 ];
 
 export default function AboutUs() {
+  const { t } = useLanguage();
+  const pillars = t.aboutUs.pillars.map((p, i) => ({ ...p, icon: pillarIcons[i] }));
   return (
     <section className="onama" id="o-nama">
 
@@ -44,30 +29,27 @@ export default function AboutUs() {
 
         {/* Left col — text */}
         <div className="onama__left">
-          <span className="onama__eyebrow">O nama</span>
+          <span className="onama__eyebrow">{t.aboutUs.eyebrow}</span>
 
           <h2 className="onama__title">
-            Rast koji se<br />
-            <span className="onama__title-em">meri, ne pretpostavlja.</span>
+            {t.aboutUs.titleLine1}<br />
+            <span className="onama__title-em">{t.aboutUs.titleEm}</span>
           </h2>
 
           <div className="onama__body">
             <p>
-              Specijalizovani smo za performance marketing i radimo sa firmama
-              koje žele <strong>stabilan i merljiv rast</strong>.
+              {t.aboutUs.body1Pre}<strong>{t.aboutUs.body1Strong}</strong>{t.aboutUs.body1Post}
             </p>
             <p>
-              Naš pristup je jednostavan: fokus na podatke, kontinuirana
-              optimizacija i strategije koje <strong>donose rezultate</strong>.
+              {t.aboutUs.body2Pre}<strong>{t.aboutUs.body2Strong}</strong>{t.aboutUs.body2Post}
             </p>
             <p>
-              Ne verujemo u "jedno rešenje za sve" — svaki biznis zahteva
-              drugačiji pristup i prilagođene kampanje.
+              {t.aboutUs.body3}
             </p>
           </div>
 
           <Link to="/kontakt" className="onama__cta">
-            Upoznajte nas
+            {t.aboutUs.cta}
             <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
               <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/>
             </svg>
@@ -89,7 +71,7 @@ export default function AboutUs() {
           {/* Floating stat */}
           <div className="onama__stat-bubble">
             <span className="onama__stat-num">98%</span>
-            <span className="onama__stat-txt">zadovoljnih klijenata</span>
+            <span className="onama__stat-txt">{t.aboutUs.statTxt}</span>
           </div>
         </div>
 

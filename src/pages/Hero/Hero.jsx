@@ -1,7 +1,9 @@
 import "./Hero.css";
 import { Link } from "react-router-dom";
+import { useLanguage } from "../../i18n/LanguageContext";
 
 export default function Hero() {
+  const { t } = useLanguage();
   return (
     <section className="hero-section">
 
@@ -49,18 +51,17 @@ export default function Hero() {
         <div className="hero-content">
           <div className="hero-tag">
             <span className="tag-pulse" />
-            Performance Marketing
+            {t.hero.tag}
           </div>
 
           <h1 className="hero-title">
-            Vaš performance
+            {t.hero.titleLine1}
             <br />
-            <span className="hero-title-accent">marketing partner.</span>
+            <span className="hero-title-accent">{t.hero.titleAccent}</span>
           </h1>
 
           <p className="hero-subtitle">
-            Pomažemo biznisima da kreiraju i optimizuju kampanje kako bi
-            dobili više leadova, prodaja, prihoda – bez nepotrebnog trošenja novca.
+            {t.hero.subtitle}
           </p>
 
           <div className="hero-actions">
@@ -74,28 +75,28 @@ export default function Hero() {
                 }
               }}
             >
-              Saznaj više
+              {t.hero.ctaLearnMore}
               <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
                 <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/>
               </svg>
             </button>
-            <Link to="/zakazi-call" className="hbtn hbtn--primary">Zakaži Call</Link>
+            <Link to="/zakazi-call" className="hbtn hbtn--primary">{t.hero.ctaBook}</Link>
           </div>
 
           <div className="hero-stats">
             <div className="hero-stat">
               <span className="stat-num">250+</span>
-              <span className="stat-label">Kampanja</span>
+              <span className="stat-label">{t.hero.statCampaigns}</span>
             </div>
             <div className="stat-divider" />
             <div className="hero-stat">
               <span className="stat-num">€1M+</span>
-              <span className="stat-label">Ad spend</span>
+              <span className="stat-label">{t.hero.statAdspend}</span>
             </div>
             <div className="stat-divider" />
             <div className="hero-stat">
               <span className="stat-num">4.8×</span>
-              <span className="stat-label">Avg. ROAS</span>
+              <span className="stat-label">{t.hero.statRoas}</span>
             </div>
           </div>
         </div>
@@ -107,7 +108,7 @@ export default function Hero() {
               <span className="mac-dot mac-dot--r" />
               <span className="mac-dot mac-dot--y" />
               <span className="mac-dot mac-dot--g" />
-              <span className="dash-card-label">Campaign overview</span>
+              <span className="dash-card-label">{t.hero.dashLabel}</span>
               <span className="dash-live">● LIVE</span>
             </div>
             <div className="dash-chart" id="bars-root">
@@ -121,15 +122,15 @@ export default function Hero() {
             </div>
             <div className="dash-stats">
               <div className="dash-stat">
-                <span className="ds-label">Leads</span>
+                <span className="ds-label">{t.hero.dashLeads}</span>
                 <span className="ds-val">1,284</span>
               </div>
               <div className="dash-stat">
-                <span className="ds-label">ROAS</span>
+                <span className="ds-label">{t.hero.dashRoas}</span>
                 <span className="ds-val ds-val--up">4.8×</span>
               </div>
               <div className="dash-stat">
-                <span className="ds-label">CPA</span>
+                <span className="ds-label">{t.hero.dashCpa}</span>
                 <span className="ds-val ds-val--dn">-38%</span>
               </div>
             </div>
@@ -138,7 +139,7 @@ export default function Hero() {
           <div className="mini-card">
             <div className="mini-icon">📈</div>
             <div>
-              <div className="mini-label">Mesečni prihod</div>
+              <div className="mini-label">{t.hero.miniLabel}</div>
               <div className="mini-val">+38%</div>
             </div>
           </div>

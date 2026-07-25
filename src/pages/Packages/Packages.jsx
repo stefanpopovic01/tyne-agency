@@ -1,43 +1,10 @@
 import "./Packages.css";
 import { Link } from "react-router-dom";
+import { useLanguage } from "../../i18n/LanguageContext";
 
-const paketi = [
-  {
-    id: "single",
-    badge: null,
-    name: "Jedna platforma",
-    sub: "Jedna platforma",
-    price: "299€",
-    priceNote: "+ 10% ad budžeta / mesečno",
-    desc: "Idealno za firme koje žele stabilan početak i prve rezultate.",
-    features: [
-      "Google ili Meta Ads",
-      "Setup i vođenje kampanja",
-      "Kontinuirana optimizacija",
-      "Mesečni izveštaj",
-      "Skaliranje"
-    ],
-    cta: "Zakaži Call",
-    featured: false,
-  },
-  {
-    id: "fullfunnel",
-    badge: "Najpopularnije",
-    name: "Dve platforme",
-    sub: "Dve platforme",
-    price: "499€",
-    priceNote: "+ 10% ad budžeta / mesečno",
-    desc: "Idealno za firme koje žele ozbiljan i kontinuiran rast.",
-    features: [
-      "Google + Meta Ads",
-      "Kompletan marketing funnel",
-      "Akvizicija + retargeting",
-      "Napredna optimizacija i testiranje",
-      "Napredno skaliranje",
-    ],
-    cta: "Zakaži Call",
-    featured: true,
-  },
+const paketiMeta = [
+  { id: "single", price: "299€", featured: false },
+  { id: "fullfunnel", price: "499€", featured: true },
 ];
 
 function CheckIcon() {
@@ -49,6 +16,8 @@ function CheckIcon() {
 }
 
 export default function Packages() {
+  const { t } = useLanguage();
+  const paketi = paketiMeta.map((m, i) => ({ ...m, ...t.packages.items[i] }));
   return (
     <section className="paketi" id="paketi">
 
@@ -62,13 +31,13 @@ export default function Packages() {
 
         {/* Header */}
         <div className="paketi__header">
-          <span className="paketi__eyebrow">Paketi</span>
+          <span className="paketi__eyebrow">{t.packages.eyebrow}</span>
           <h2 className="paketi__title">
-            Transparentne cene.<br />
-            <span className="paketi__title-em">Merljivi rezultati.</span>
+            {t.packages.titleLine1}<br />
+            <span className="paketi__title-em">{t.packages.titleEm}</span>
           </h2>
           <p className="paketi__lead">
-            Bez skrivenih troškova. Plaćate samo ono što vidite — i vidite tačno šta dobijate.
+            {t.packages.lead}
           </p>
         </div>
 
@@ -92,7 +61,7 @@ export default function Packages() {
                   {/* <span className="paket__sub">{p.sub}</span> */}
                 </div>
                 <div className="paket__price-wrap">
-                  <span className="paket__from">od</span>
+                  <span className="paket__from">{t.packages.from}</span>
                   <span className="paket__price">{p.price}</span>
                 </div>
                 <span className="paket__price-note">{p.priceNote}</span>
@@ -132,8 +101,8 @@ export default function Packages() {
 
         {/* Bottom note */}
         <p className="paketi__note">
-          Niste sigurni koji paket odgovara vašem biznisu?
-          <Link to='/zakazi-call' className="paketi__note-link">Razgovarajmo — besplatno.</Link>
+          {t.packages.note}
+          <Link to='/zakazi-call' className="paketi__note-link">{t.packages.noteLink}</Link>
         </p>
 
       </div>

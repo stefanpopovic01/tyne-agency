@@ -1,16 +1,7 @@
 import { Link, useNavigate, useLocation } from "react-router-dom";
 import "./Footer.css";
 import logoFull from "../../assets/logo-full-white.png";
-
-const nav = [
-  { label: "Početna", type: "home" },
-  { label: "Usluge",  type: "section", sectionId: "usluge" },
-  { label: "Paketi",  type: "section", sectionId: "paketi" },
-  { label: "Portfolio", type: "route",   to: "/portfolio" },
-  { label: "O nama",  type: "section", sectionId: "o-nama" },
-  { label: "FAQ",     type: "section", sectionId: "faq" },
-  { label: "Kontakt", type: "route",   to: "/kontakt" },
-];
+import { useLanguage } from "../../i18n/LanguageContext";
 
 const socials = [
   {
@@ -50,6 +41,17 @@ export default function Footer() {
   const year = new Date().getFullYear();
   const navigate = useNavigate();
   const location = useLocation();
+  const { t } = useLanguage();
+
+  const nav = [
+    { label: t.header.navHome, type: "home" },
+    { label: t.header.navServices, type: "section", sectionId: "usluge" },
+    { label: t.header.navPackages, type: "section", sectionId: "paketi" },
+    { label: t.header.navPortfolio, type: "route", to: "/portfolio" },
+    { label: t.header.navAbout, type: "section", sectionId: "o-nama" },
+    { label: "FAQ", type: "section", sectionId: "faq" },
+    { label: t.header.navContact, type: "route", to: "/kontakt" },
+  ];
 
   const scrollToSection = (id) => {
     const el = document.getElementById(id);
@@ -101,7 +103,7 @@ export default function Footer() {
             <img src={logoFull} alt="Tyne Agency" className="footer__logo" />
           </Link>
           <p className="footer__tagline">
-            Performance marketing partner za biznise koji žele merljiv i stabilan rast.
+            {t.footer.tagline}
           </p>
           <div className="footer__socials">
             {socials.map((s) => (
@@ -114,7 +116,7 @@ export default function Footer() {
         </div>
 
         <div className="footer__col">
-          <span className="footer__col-title">Navigacija</span>
+          <span className="footer__col-title">{t.footer.navTitle}</span>
           <ul className="footer__links">
             {nav.map((n) => (
               <li key={n.label}>
@@ -131,7 +133,7 @@ export default function Footer() {
         </div>
 
         <div className="footer__col">
-          <span className="footer__col-title">Kontakt</span>
+          <span className="footer__col-title">{t.footer.contactTitle}</span>
           <ul className="footer__links">
             {/* <li>
               <a href="mailto:hello@tyneagency.com" className="footer__link footer__link--icon">
@@ -162,13 +164,13 @@ export default function Footer() {
             <li>
               <Link to="/zakazi-call" className="footer__link footer__link--icon">
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 1 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-                Beograd, Srbija
+                {t.footer.address}
               </Link>
             </li>
           </ul>
 
           <Link to="/zakazi-call" className="footer__cta">
-            Zakaži besplatan call
+            {t.footer.ctaBook}
             <svg width="13" height="13" viewBox="0 0 16 16" fill="none">
               <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round"/>
             </svg>
@@ -179,7 +181,7 @@ export default function Footer() {
 
       <div className="footer__bottom">
         <div className="footer__bottom-inner">
-          <span className="footer__copy">© {year} Tyne Agency. Sva prava zadržana.</span>
+          <span className="footer__copy">© {year} Tyne Agency. {t.footer.rights}</span>
         </div>
       </div>
 

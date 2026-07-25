@@ -2,8 +2,10 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import "./Contact.css";
+import { useLanguage } from "../../i18n/LanguageContext";
 
 export default function Contact() {
+  const { t } = useLanguage();
   const [form, setForm] = useState({
     ime: "", email: "", telefon: "", kompanija: "", poruka: "",
   });
@@ -20,14 +22,13 @@ export default function Contact() {
 
         {/* ── LEFT — info ── */}
         <div className="k-left">
-          <span className="k-eyebrow">Kontakt</span>
+          <span className="k-eyebrow">{t.contact.eyebrow}</span>
           <h1 className="k-title">
-            Razgovarajmo o<br />
-            <span className="k-title-em">vašem rastu.</span>
+            {t.contact.titleLine1}<br />
+            <span className="k-title-em">{t.contact.titleEm}</span>
           </h1>
           <p className="k-desc">
-            Popunite formu ili nas kontaktirajte direktno.
-            Odgovaramo u roku od 24h.
+            {t.contact.desc}
           </p>
 
           {/* Info cards */}
@@ -52,7 +53,7 @@ export default function Contact() {
                 </svg>
               </div>
               <div>
-                <div className="k-card-label">Telefon</div>
+                <div className="k-card-label">{t.contact.phoneLabel}</div>
                 <div className="k-card-value">+381 69 1258 825</div>
               </div>
             </a>
@@ -61,8 +62,8 @@ export default function Contact() {
           {/* Dark CTA block */}
           <div className="k-dark-block">
             <div className="k-dark-block-text">
-              <span className="k-dark-block-title">Preferirate poziv?</span>
-              <span className="k-dark-block-sub">Zakažite besplatan 30-minutni razgovor.</span>
+              <span className="k-dark-block-title">{t.contact.darkBlockTitle}</span>
+              <span className="k-dark-block-sub">{t.contact.darkBlockSub}</span>
             </div>
             {/* <a href="https://calendly.com" target="_blank" rel="noopener noreferrer" className="k-dark-block-btn">
               Zakaži call
@@ -71,7 +72,7 @@ export default function Contact() {
               </svg>
             </a> */}
             <Link to='/zakazi-call' className="k-dark-block-btn">
-              Zakaži call
+              {t.contact.darkBlockBtn}
               <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
                 <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round"/>
               </svg>
@@ -84,8 +85,8 @@ export default function Contact() {
           {!sent ? (
             <>
               <div className="k-form-header">
-                <h2 className="k-form-title">Pošaljite poruku</h2>
-                <p className="k-form-sub">Sva polja označena sa * su obavezna.</p>
+                <h2 className="k-form-title">{t.contact.formTitle}</h2>
+                <p className="k-form-sub">{t.contact.formSub}</p>
               </div>
 
                 <form
@@ -107,33 +108,33 @@ export default function Contact() {
                 >
                   <div className="k-row">
                   <div className="k-field">
-                    <label className="k-label" htmlFor="ime">Ime i prezime *</label>
-                    <input id="ime" name="ime" type="text" required placeholder="Marko Marković" className="k-input" value={form.ime} onChange={handle}/>
+                    <label className="k-label" htmlFor="ime">{t.contact.nameLabel}</label>
+                    <input id="ime" name="ime" type="text" required placeholder={t.contact.namePlaceholder} className="k-input" value={form.ime} onChange={handle}/>
                   </div>
                   <div className="k-field">
-                    <label className="k-label" htmlFor="email">Email adresa *</label>
-                    <input id="email" name="email" type="email" required placeholder="marko@firma.com" className="k-input" value={form.email} onChange={handle}/>
+                    <label className="k-label" htmlFor="email">{t.contact.emailLabel}</label>
+                    <input id="email" name="email" type="email" required placeholder={t.contact.emailPlaceholder} className="k-input" value={form.email} onChange={handle}/>
                   </div>
                 </div>
 
                 <div className="k-row">
                   <div className="k-field">
-                    <label className="k-label" htmlFor="telefon">Broj telefona</label>
-                    <input id="telefon" name="telefon" type="tel" placeholder="+381 60 000 0000" className="k-input" value={form.telefon} onChange={handle}/>
+                    <label className="k-label" htmlFor="telefon">{t.contact.phoneFieldLabel}</label>
+                    <input id="telefon" name="telefon" type="tel" placeholder={t.contact.phonePlaceholder} className="k-input" value={form.telefon} onChange={handle}/>
                   </div>
                   <div className="k-field">
-                    <label className="k-label" htmlFor="kompanija" >Sajt kompanije *</label>
-                    <input id="kompanija" name="kompanija" type="text" required placeholder="www.sajt.com" className="k-input" value={form.kompanija} onChange={handle}/>
+                    <label className="k-label" htmlFor="kompanija" >{t.contact.companyLabel}</label>
+                    <input id="kompanija" name="kompanija" type="text" required placeholder={t.contact.companyPlaceholder} className="k-input" value={form.kompanija} onChange={handle}/>
                   </div>
                 </div>
 
                 <div className="k-field">
-                  <label className="k-label" htmlFor="poruka">Poruka *</label>
-                  <textarea id="poruka" name="poruka" required rows={5} placeholder="Opišite vaš biznis i šta želite da postignete..." className="k-input k-textarea" value={form.poruka} onChange={handle}/>
+                  <label className="k-label" htmlFor="poruka">{t.contact.messageLabel}</label>
+                  <textarea id="poruka" name="poruka" required rows={5} placeholder={t.contact.messagePlaceholder} className="k-input k-textarea" value={form.poruka} onChange={handle}/>
                 </div>
 
                 <button type="submit" className="k-submit">
-                  Pošaljite poruku
+                  {t.contact.submit}
                   <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                     <line x1="22" y1="2" x2="11" y2="13"/>
                     <polygon points="22 2 15 22 11 13 2 9 22 2"/>
@@ -148,10 +149,10 @@ export default function Contact() {
                   <polyline points="20 6 9 17 4 12"/>
                 </svg>
               </div>
-              <h2 className="k-success-title">Poruka poslata!</h2>
-              <p className="k-success-text">Hvala vam. Javićemo se u roku od 24h.</p>
+              <h2 className="k-success-title">{t.contact.successTitle}</h2>
+              <p className="k-success-text">{t.contact.successText}</p>
               <button className="k-submit" style={{maxWidth: "260px"}} onClick={() => setSent(false)}>
-                Pošaljite još jednu poruku
+                {t.contact.successBtn}
               </button>
             </div>
           )}
