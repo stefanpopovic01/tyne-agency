@@ -2,6 +2,7 @@ import { Link, useNavigate, useLocation } from "react-router-dom";
 import "./Footer.css";
 import logoFull from "../../assets/logo-full-white.png";
 import { useLanguage } from "../../i18n/LanguageContext";
+import { useConsent } from "../../consent/ConsentContext";
 
 const socials = [
   {
@@ -42,6 +43,7 @@ export default function Footer() {
   const navigate = useNavigate();
   const location = useLocation();
   const { t } = useLanguage();
+  const { openSettings } = useConsent();
 
   const nav = [
     { label: t.header.navHome, type: "home" },
@@ -182,6 +184,12 @@ export default function Footer() {
       <div className="footer__bottom">
         <div className="footer__bottom-inner">
           <span className="footer__copy">© {year} Tyne Agency. {t.footer.rights}</span>
+          <div className="footer__legal">
+            <Link to="/politika-privatnosti" className="footer__legal-link">{t.privacyPolicy.eyebrow}</Link>
+            <button type="button" className="footer__legal-link footer__legal-btn" onClick={openSettings}>
+              {t.cookieConsent.footerLink}
+            </button>
+          </div>
         </div>
       </div>
 

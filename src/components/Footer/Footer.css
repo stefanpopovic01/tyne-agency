@@ -182,6 +182,31 @@
   color: rgba(255,255,255,0.2);
 }
 
+.footer__legal {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.footer__legal-link {
+  font-size: 0.78rem;
+  color: rgba(255,255,255,0.35);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.footer__legal-link:hover {
+  color: rgba(255,255,255,0.7);
+}
+
+.footer__legal-btn {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  font-family: inherit;
+}
+
 .footer__made {
   font-size: 0.78rem;
   color: rgba(255,255,255,0.18);

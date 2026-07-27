@@ -16,6 +16,8 @@ import Portfolio from './pages/Portfolio/Portfolio'
 import NotFound from './components/NotFound/Notfound'
 import Success from './pages/Success/Success'
 import ContactSuccess from './pages/ContactSuccess/ContactSuccess'
+import PrivacyPolicy from './pages/PrivacyPolicy/PrivacyPolicy'
+import CookieBanner from './components/CookieBanner/CookieBanner'
 
 import { Routes, Route } from "react-router-dom";
 
@@ -34,10 +36,13 @@ function App() {
         <Route path="/portfolio" element={<Portfolio />} />
         <Route path="/zakazi-call/uspesno" element={<Success />} />
         <Route path="/kontakt/uspesno" element={<ContactSuccess />} />
-        <Route path="*" element={<NotFound />} /> 
+        <Route path="/politika-privatnosti" element={<PrivacyPolicy />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
 
       <Footer/>
+
+      <CookieBanner />
     </>
   )
 }

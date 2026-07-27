@@ -1,0 +1,83 @@
+.pp-page {
+  width: 100%;
+  min-height: calc(100vh - 72px);
+  margin-top: 72px;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+}
+
+.pp-inner {
+  width: 100%;
+  max-width: 760px;
+  padding: 64px 24px 96px;
+}
+
+.pp-eyebrow {
+  display: inline-block;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--blue, #0b5bf2);
+  margin-bottom: 12px;
+}
+
+.pp-title {
+  font-size: clamp(1.6rem, 3.5vw, 2.3rem);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: var(--dark, #0d0f14);
+  margin-bottom: 8px;
+}
+
+.pp-updated {
+  font-size: 0.85rem;
+  color: var(--gray, #4a5568);
+  margin-bottom: 28px;
+}
+
+.pp-intro {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--gray, #4a5568);
+  margin-bottom: 36px;
+  padding-bottom: 28px;
+  border-bottom: 1px solid rgba(13, 15, 20, 0.08);
+}
+
+.pp-section {
+  margin-bottom: 28px;
+}
+
+.pp-section-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--dark, #0d0f14);
+  margin-bottom: 8px;
+}
+
+.pp-section-body {
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: var(--gray, #4a5568);
+}
+
+.pp-settings-btn {
+  margin-top: 20px;
+  font-family: inherit;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--white, #fff);
+  background: var(--blue, #0b5bf2);
+  border: none;
+  border-radius: var(--radius, 10px);
+  padding: 12px 24px;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.pp-settings-btn:hover {
+  background: var(--blue-hover, #0948cc);
+  transform: translateY(-1px);
+}

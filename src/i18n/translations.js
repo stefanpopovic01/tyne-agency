@@ -290,6 +290,58 @@ Ukupno je potrošeno $5.326,74, uz ostvarenih preko 2,86 miliona impresija i 766
       btnHome: "Idi na početnu",
       btnContact: "Kontaktiraj nas",
     },
+    cookieConsent: {
+      title: "Koristimo kolačiće",
+      message:
+        "Koristimo kolačiće za osnovno funkcionisanje sajta, analitiku posete i merenje efikasnosti oglasa. Analitika i marketing kolačići se postavljaju samo uz vašu saglasnost.",
+      policyLinkText: "Saznajte više u Politici privatnosti",
+      rejectAll: "Odbij sve",
+      customize: "Prilagodi",
+      acceptAll: "Prihvati sve",
+      settingsTitle: "Postavke kolačića",
+      settingsIntro:
+        "Odaberite koje kategorije kolačića dozvoljavate. Neophodni kolačići su uvek aktivni jer su potrebni za rad sajta.",
+      necessaryTitle: "Neophodni kolačići",
+      necessaryDesc: "Omogućavaju osnovne funkcije sajta (navigacija, forme, bezbednost). Ne mogu se isključiti.",
+      analyticsTitle: "Analitički kolačići",
+      analyticsDesc: "Pomažu nam da razumemo kako posetioci koriste sajt (Google Analytics), kako bismo ga unapredili.",
+      marketingTitle: "Marketing kolačići",
+      marketingDesc: "Koriste se za merenje i optimizaciju oglasa (Google Ads) prilagođenih vašim interesovanjima.",
+      alwaysOn: "Uvek aktivno",
+      savePreferences: "Sačuvaj izbor",
+      cancel: "Otkaži",
+      footerLink: "Postavke kolačića",
+    },
+    privacyPolicy: {
+      metaTitle: "Politika privatnosti",
+      eyebrow: "Politika privatnosti",
+      title: "Politika privatnosti i kolačića",
+      lastUpdated: "Poslednje ažuriranje",
+      intro:
+        "Ova politika objašnjava koje podatke prikupljamo putem kolačića (cookies) kada posetite sajt Tyne Agency, u koje svrhe i kako možete upravljati svojim izborom.",
+      sections: [
+        {
+          heading: "Šta su kolačići?",
+          body: "Kolačići su male tekstualne datoteke koje se čuvaju u vašem pregledaču kada posetite neki sajt. Koriste se za pamćenje vaših podešavanja, merenje posete i prikazivanje relevantnijih oglasa.",
+        },
+        {
+          heading: "Koje kolačiće koristimo",
+          body: "Koristimo tri kategorije kolačića: (1) Neophodni — potrebni za osnovno funkcionisanje sajta i uvek su aktivni; (2) Analitički — Google Analytics, pomažu nam da razumemo saobraćaj i ponašanje posetilaca; (3) Marketing — Google Ads, koriste se za merenje konverzija i prikazivanje relevantnih oglasa. Analitički i marketing kolačići se postavljaju isključivo uz vašu prethodnu saglasnost.",
+        },
+        {
+          heading: "Google Consent Mode",
+          body: "Sajt koristi Google-ov Consent Mode v2. Dok ne date saglasnost, Google Analytics i Google Ads rade u ograničenom režimu bez ličnih identifikatora. Tek nakon što prihvatite odgovarajuću kategoriju, omogućava se puno praćenje.",
+        },
+        {
+          heading: "Kako promeniti svoj izbor",
+          body: 'Svoj izbor možete izmeniti u bilo kom trenutku klikom na "Postavke kolačića" u podnožju sajta.',
+        },
+        {
+          heading: "Kontakt",
+          body: "Za sva pitanja u vezi sa privatnošću i kolačićima, kontaktirajte nas putem stranice Kontakt.",
+        },
+      ],
+    },
   },
 
   en: {
@@ -582,6 +634,58 @@ A total of $5,326.74 was spent, achieving over 2.86 million impressions and reac
       desc: "The page you're looking for doesn't exist or has been moved.",
       btnHome: "Go to homepage",
       btnContact: "Contact us",
+    },
+    cookieConsent: {
+      title: "We use cookies",
+      message:
+        "We use cookies for essential site functionality, visit analytics, and measuring ad performance. Analytics and marketing cookies are only set with your consent.",
+      policyLinkText: "Learn more in our Privacy Policy",
+      rejectAll: "Reject All",
+      customize: "Customize",
+      acceptAll: "Accept All",
+      settingsTitle: "Cookie Settings",
+      settingsIntro:
+        "Choose which categories of cookies you allow. Necessary cookies are always active since they're required for the site to work.",
+      necessaryTitle: "Necessary cookies",
+      necessaryDesc: "Enable core site functionality (navigation, forms, security). These can't be turned off.",
+      analyticsTitle: "Analytics cookies",
+      analyticsDesc: "Help us understand how visitors use the site (Google Analytics), so we can improve it.",
+      marketingTitle: "Marketing cookies",
+      marketingDesc: "Used to measure and optimize ads (Google Ads) tailored to your interests.",
+      alwaysOn: "Always active",
+      savePreferences: "Save preferences",
+      cancel: "Cancel",
+      footerLink: "Cookie Settings",
+    },
+    privacyPolicy: {
+      metaTitle: "Privacy Policy",
+      eyebrow: "Privacy Policy",
+      title: "Privacy & Cookie Policy",
+      lastUpdated: "Last updated",
+      intro:
+        "This policy explains what data we collect through cookies when you visit the Tyne Agency website, for what purposes, and how you can manage your choices.",
+      sections: [
+        {
+          heading: "What are cookies?",
+          body: "Cookies are small text files stored in your browser when you visit a website. They're used to remember your settings, measure visits, and show more relevant ads.",
+        },
+        {
+          heading: "Which cookies we use",
+          body: "We use three categories of cookies: (1) Necessary — required for basic site functionality and always active; (2) Analytics — Google Analytics, helping us understand traffic and visitor behavior; (3) Marketing — Google Ads, used to measure conversions and show relevant ads. Analytics and marketing cookies are only set with your prior consent.",
+        },
+        {
+          heading: "Google Consent Mode",
+          body: "This site uses Google's Consent Mode v2. Until you give consent, Google Analytics and Google Ads operate in a limited mode without personal identifiers. Full tracking is enabled only after you accept the relevant category.",
+        },
+        {
+          heading: "How to change your choice",
+          body: 'You can change your choice at any time by clicking "Cookie Settings" in the site footer.',
+        },
+        {
+          heading: "Contact",
+          body: "For any questions about privacy and cookies, please contact us via the Contact page.",
+        },
+      ],
     },
   },
 };
