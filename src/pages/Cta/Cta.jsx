@@ -13,7 +13,7 @@ import logo8 from '../../assets/client8.webp';
 import { Link } from "react-router-dom";
 import { useLanguage } from "../../i18n/LanguageContext";
 
-const LOGOS = [logo1, logo2, logo4, logo5, logo6, logo7, logo8]
+const LOGOS = [logo1, logo2, logo4, logo5, logo6, logo7]
 
 const pointIcons = [
   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>,
