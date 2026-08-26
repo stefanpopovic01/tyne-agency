@@ -120,7 +120,7 @@ export default function Contact() {
                 <div className="k-row">
                   <div className="k-field">
                     <label className="k-label" htmlFor="telefon">{t.contact.phoneFieldLabel}</label>
-                    <input id="telefon" name="telefon" type="tel" placeholder={t.contact.phonePlaceholder} className="k-input" value={form.telefon} onChange={handle}/>
+                    <input id="telefon" name="telefon" type="tel" required placeholder={t.contact.phonePlaceholder} className="k-input" value={form.telefon} onChange={handle}/>
                   </div>
                   <div className="k-field">
                     <label className="k-label" htmlFor="kompanija" >{t.contact.companyLabel}</label>

@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" http://localhost:5184 --max-time 2)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" http://localhost:5183 --max-time 2)",
+      "Bash(npx eslint *)",
+      "Bash(node --check src/i18n/translations.js)",
+      "Bash(npx vite *)",
+      "Bash(node test-consent.mjs)",
+      "Bash(node -e ' *)"
+    ]
+  }
+}

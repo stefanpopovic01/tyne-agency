@@ -32,12 +32,12 @@ export default function ScheduleCall() {
   const days = getAvailableDays(t.scheduleCall.dayNames, t.scheduleCall.monthNames);
   const [selectedDay, setSelectedDay] = useState(null);
   const [selectedTime, setSelectedTime] = useState(null);
-  const [form, setForm] = useState({ ime: "", email: "", kompanija: "", napomena: "" });
+  const [form, setForm] = useState({ ime: "", email: "", telefon: "", kompanija: "", napomena: "" });
   const [sent, setSent] = useState(false);
 
   const handle = (e) => setForm((f) => ({ ...f, [e.target.name]: e.target.value }));
 
-  const canSubmit = selectedDay !== null && selectedTime !== null && form.ime && form.email;
+  const canSubmit = selectedDay !== null && selectedTime !== null && form.ime && form.email && form.telefon;
   const navigate = useNavigate();
 
   return (
@@ -134,6 +134,11 @@ export default function ScheduleCall() {
                     <label className="zc-label" htmlFor="zc-email">{t.scheduleCall.emailLabel}</label>
                     <input id="zc-email" name="email" type="email" required placeholder={t.scheduleCall.emailPlaceholder} className="zc-input" value={form.email} onChange={handle}/>
                   </div>
+                </div>
+
+                <div className="zc-field">
+                  <label className="zc-label" htmlFor="zc-telefon">{t.scheduleCall.phoneLabel}</label>
+                  <input id="zc-telefon" name="telefon" type="tel" required placeholder={t.scheduleCall.phonePlaceholder} className="zc-input" value={form.telefon} onChange={handle}/>
                 </div>
 
                 <div className="zc-field">
