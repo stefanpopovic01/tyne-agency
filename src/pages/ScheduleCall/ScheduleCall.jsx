@@ -148,8 +148,17 @@ export default function ScheduleCall() {
 
                 <div className="zc-field">
                   <label className="zc-label" htmlFor="zc-napomena">{t.scheduleCall.noteLabel}</label>
-                  <textarea id="zc-napomena" name="napomena" required rows={3} placeholder={t.scheduleCall.notePlaceholder} className="zc-input zc-textarea" value={form.napomena} onChange={handle}/>
-                </div>
+                <textarea
+                  id="zc-napomena"
+                  name="napomena"
+                  required
+                  rows={3}
+                  maxLength={500}
+                  placeholder={t.scheduleCall.notePlaceholder}
+                  className="zc-input zc-textarea"
+                  value={form.napomena}
+                  onChange={handle}
+                />                </div>
 
                 <button type="submit" className={`zc-submit${!canSubmit ? " zc-submit--disabled" : ""}`} disabled={!canSubmit}>
                   {t.scheduleCall.submit}

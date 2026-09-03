@@ -130,8 +130,17 @@ export default function Contact() {
 
                 <div className="k-field">
                   <label className="k-label" htmlFor="poruka">{t.contact.messageLabel}</label>
-                  <textarea id="poruka" name="poruka" required rows={5} placeholder={t.contact.messagePlaceholder} className="k-input k-textarea" value={form.poruka} onChange={handle}/>
-                </div>
+                  <textarea
+                    id="poruka"
+                    name="poruka"
+                    required
+                    rows={5}
+                    maxLength={500}
+                    placeholder={t.contact.messagePlaceholder}
+                    className="k-input k-textarea"
+                    value={form.poruka}
+                    onChange={handle}
+                  />                </div>
 
                 <button type="submit" className="k-submit">
                   {t.contact.submit}

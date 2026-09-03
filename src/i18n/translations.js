@@ -135,7 +135,7 @@ export const translations = {
       titleEm: "Imamo odgovore.",
       lead: "Sve što ste hteli da pitate pre nego što se odlučite.",
       items: [
-        { q: "Koliki budžet je potreban?", a: "Preporučeni minimum je 300–500€ mesečno po platformi kako bi kampanje imale dovoljno podataka za optimizaciju." },
+        { q: "Koliki budžet je potreban?", a: "Preporučeni minimum je 500€ mesečno po platformi kako bi kampanje imale dovoljno podataka za optimizaciju." },
         { q: "Kada mogu da očekujem rezultate?", a: "Prvi rezultati dolaze relativno brzo, dok se ozbiljniji i stabilan rast postiže kroz kontinuiranu optimizaciju u narednim nedeljama." },
         { q: "Da li radite sa svim industrijama?", a: "Radimo sa biznisima koji žele rast kroz online oglašavanje, uz fokus na one gde možemo doneti konkretne i merljive rezultate." },
         { q: "Da li radite i sa malim biznisima?", a: "Da — radimo sa firmama svih veličina, ali je važno da postoji budžet koji omogućava testiranje i optimizaciju kampanja." },
@@ -482,7 +482,7 @@ Ukupno je potrošeno $5.326,74, uz ostvarenih preko 2,86 miliona impresija i 766
       titleEm: "We have answers.",
       lead: "Everything you wanted to ask before deciding.",
       items: [
-        { q: "How big a budget do I need?", a: "The recommended minimum is €300–500 per month per platform so campaigns have enough data to optimize." },
+        { q: "How big a budget do I need?", a: "The recommended minimum is €500 per month per platform so campaigns have enough data to optimize." },
         { q: "When can I expect results?", a: "The first results come relatively quickly, while serious, stable growth is achieved through continuous optimization over the following weeks." },
         { q: "Do you work with all industries?", a: "We work with businesses that want to grow through online advertising, focusing on those where we can deliver concrete, measurable results." },
         { q: "Do you also work with small businesses?", a: "Yes — we work with companies of all sizes, but it's important to have a budget that allows for testing and optimizing campaigns." },

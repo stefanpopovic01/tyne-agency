@@ -85,7 +85,7 @@ export default function Hero() {
 
           <div className="hero-stats">
             <div className="hero-stat">
-              <span className="stat-num">250+</span>
+              <span className="stat-num">1000+</span>
               <span className="stat-label">{t.hero.statCampaigns}</span>
             </div>
             <div className="stat-divider" />
@@ -95,7 +95,7 @@ export default function Hero() {
             </div>
             <div className="stat-divider" />
             <div className="hero-stat">
-              <span className="stat-num">4.8×</span>
+              <span className="stat-num">4.6×</span>
               <span className="stat-label">{t.hero.statRoas}</span>
             </div>
           </div>
