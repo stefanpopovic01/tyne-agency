@@ -153,7 +153,7 @@ export default function ScheduleCall() {
                   name="napomena"
                   required
                   rows={3}
-                  maxLength={500}
+                  maxLength={1000}
                   placeholder={t.scheduleCall.notePlaceholder}
                   className="zc-input zc-textarea"
                   value={form.napomena}

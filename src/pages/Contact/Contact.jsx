@@ -135,7 +135,7 @@ export default function Contact() {
                     name="poruka"
                     required
                     rows={5}
-                    maxLength={500}
+                    maxLength={1000}
                     placeholder={t.contact.messagePlaceholder}
                     className="k-input k-textarea"
                     value={form.poruka}
