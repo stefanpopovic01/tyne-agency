@@ -16,7 +16,7 @@ function CheckIcon() {
 }
 
 export default function Packages() {
-  const { t } = useLanguage();
+  const { t, lp } = useLanguage();
   const paketi = paketiMeta.map((m, i) => ({ ...m, ...t.packages.items[i] }));
   return (
     <section className="paketi" id="paketi">
@@ -87,7 +87,7 @@ export default function Packages() {
 
               {/* CTA */}
               <Link
-                to="/zakazi-call"
+                to={lp("/zakazi-call")}
                 className={`paket__cta${p.featured ? " paket__cta--featured" : ""}`}
               >
                 {p.cta}
@@ -102,7 +102,7 @@ export default function Packages() {
         {/* Bottom note */}
         <p className="paketi__note">
           {t.packages.note}
-          <Link to='/zakazi-call' className="paketi__note-link">{t.packages.noteLink}</Link>
+          <Link to={lp('/zakazi-call')} className="paketi__note-link">{t.packages.noteLink}</Link>
         </p>
 
       </div>

@@ -76,7 +76,7 @@ function CookieSettingsPanel({ consent, onCancel, onSave, t }) {
 
 export default function CookieBanner() {
   const { hasDecided, settingsOpen, consent, acceptAll, rejectAll, savePreferences, openSettings, closeSettings } = useConsent();
-  const { t } = useLanguage();
+  const { t, lp } = useLanguage();
 
   const visible = !hasDecided || settingsOpen;
   if (!visible) return null;
@@ -99,7 +99,7 @@ export default function CookieBanner() {
             <strong className="cookie-banner__title">{t.cookieConsent.title}</strong>
             <p className="cookie-banner__message">
               {t.cookieConsent.message}{" "}
-              <Link to="/politika-privatnosti" className="cookie-banner__link">
+              <Link to={lp("/politika-privatnosti")} className="cookie-banner__link">
                 {t.cookieConsent.policyLinkText}
               </Link>
             </p>

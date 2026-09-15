@@ -1,11 +1,13 @@
 import { Link } from "react-router-dom";
 import "./Notfound.css";
 import { useLanguage } from "../../i18n/LanguageContext";
+import { SEO } from "../SEO/SEO";
 
 export default function NotFound() {
-  const { t } = useLanguage();
+  const { t, lp } = useLanguage();
   return (
     <div className="nf-page">
+      <SEO {...t.seo.notFound} />
 
       <div className="nf-bg" aria-hidden="true">
         <div className="nf-glow nf-glow--a" />
@@ -19,10 +21,10 @@ export default function NotFound() {
           {t.notFound.desc}
         </p>
         <div className="nf-actions">
-          <Link to="/" className="nf-btn nf-btn--primary">
+          <Link to={lp("/")} className="nf-btn nf-btn--primary">
             {t.notFound.btnHome}
           </Link>
-          <Link to="/kontakt" className="nf-btn nf-btn--outline">
+          <Link to={lp("/kontakt")} className="nf-btn nf-btn--outline">
             {t.notFound.btnContact}
           </Link>
         </div>

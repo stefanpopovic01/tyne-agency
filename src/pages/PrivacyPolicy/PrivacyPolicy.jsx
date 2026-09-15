@@ -1,16 +1,16 @@
 import "./PrivacyPolicy.css";
 import { useLanguage } from "../../i18n/LanguageContext";
 import { useConsent } from "../../consent/ConsentContext";
-import { useSEO } from "../../hooks/useSEO";
+import { SEO } from "../../components/SEO/SEO";
 
 export default function PrivacyPolicy() {
   const { t } = useLanguage();
-  useSEO(t.seo.privacyPolicy);
   const { openSettings } = useConsent();
   const p = t.privacyPolicy;
 
   return (
     <div className="pp-page">
+      <SEO {...t.seo.privacyPolicy} />
       <div className="pp-inner">
         <span className="pp-eyebrow">{p.eyebrow}</span>
         <h1 className="pp-title">{p.title}</h1>

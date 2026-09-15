@@ -43,8 +43,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script defer src="/_vercel/insights/script.js"></script>
 
-    <title>Tyne Agency | Performance Marketing Agencija za Google i Meta Oglašavanje</title>
-    <meta name="description" content="Tyne Agency je performance marketing agencija iz Beograda. Kreiramo i optimizujemo Google Ads i Meta Ads kampanje koje donose merljive rezultate – više leadova, prodaja i prihoda." />
+    <!-- Title and meta description are intentionally omitted here: every prerendered
+         route renders its own via the SEO component (src/components/SEO/SEO.jsx,
+         react-helmet-async), injected during the SSG build. A static tag here would
+         duplicate that one rather than being replaced by it. -->
 
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Tyne Agency" />

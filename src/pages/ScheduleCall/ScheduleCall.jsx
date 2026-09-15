@@ -1,8 +1,8 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import "./ScheduleCall.css";
 import { useLanguage } from "../../i18n/LanguageContext";
-import { useSEO } from "../../hooks/useSEO";
+import { SEO } from "../../components/SEO/SEO";
 
 // Generate next 14 available days (skip Sundays & Saturday)
 function getAvailableDays(dayNames, monthNames) {
@@ -28,10 +28,16 @@ function getAvailableDays(dayNames, monthNames) {
 const timeSlots = ["09:00","10:00","11:00","12:00","13:00", "14:00","15:00","16:00"];
 
 export default function ScheduleCall() {
-  const { t } = useLanguage();
-  useSEO(t.seo.scheduleCall);
+  const { t, lp } = useLanguage();
   const steps = t.scheduleCall.steps;
-  const days = getAvailableDays(t.scheduleCall.dayNames, t.scheduleCall.monthNames);
+  // Computed client-side only: "today" at build time (SSG) would otherwise bake in
+  // stale dates and mismatch the client's real "today" on hydration.
+  const [days, setDays] = useState([]);
+  useEffect(() => {
+    // Intentional: must run after mount so the SSG build's "today" never leaks into the prerendered HTML.
+    // eslint-disable-next-line react-hooks/set-state-in-effect
+    setDays(getAvailableDays(t.scheduleCall.dayNames, t.scheduleCall.monthNames));
+  }, [t.scheduleCall.dayNames, t.scheduleCall.monthNames]);
   const [selectedDay, setSelectedDay] = useState(null);
   const [selectedTime, setSelectedTime] = useState(null);
   const [selectedBudget, setSelectedBudget] = useState(null);
@@ -45,6 +51,7 @@ export default function ScheduleCall() {
 
   return (
     <div className="zc-page">
+      <SEO {...t.seo.scheduleCall} />
       <div className="zc-inner">
 
         <div className="zc-right">
@@ -80,7 +87,7 @@ export default function ScheduleCall() {
                   });
 
                   setSent(true);
-                  navigate(selectedBudget === 0 ? "/uspeh" : "/zakazi-call/uspesno");
+                  navigate(lp(selectedBudget === 0 ? "/uspeh" : "/zakazi-call/uspesno"));
                 }}
               >
                 {/* Date picker */}

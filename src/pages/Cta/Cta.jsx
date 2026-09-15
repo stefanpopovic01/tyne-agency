@@ -22,7 +22,7 @@ const pointIcons = [
 ];
 
 export default function CTA() {
-  const { t } = useLanguage();
+  const { t, lp } = useLanguage();
   const points = t.cta.points.map((text, i) => ({ icon: pointIcons[i], text }));
   return (
     <section className="cta-section" id="kontakt">
@@ -80,7 +80,7 @@ export default function CTA() {
               ))}
             </ul>
 
-            <Link to='/zakazi-call' className="bc__btn">
+            <Link to={lp('/zakazi-call')} className="bc__btn">
               <span className="bc__btn-pulse" aria-hidden="true" />
               {t.cta.btn}
               <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">

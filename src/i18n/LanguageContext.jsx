@@ -1,39 +1,17 @@
-import { createContext, useContext, useState, useEffect } from "react";
+import { createContext, useContext } from "react";
 import { translations } from "./translations";
+import { localize } from "./langPath";
 
 const LanguageContext = createContext(null);
 
-const STORAGE_KEY = "tyne-lang";
-
-function getCookie(name) {
-  const match = document.cookie.match(new RegExp(`(?:^|;\\s*)${name}=(sr|en)`));
-  return match ? match[1] : null;
-}
-
-function getInitialLang() {
-  if (typeof window === "undefined") return "sr";
-  const stored = window.localStorage.getItem(STORAGE_KEY);
-  if (stored === "en" || stored === "sr") return stored;
-  // Falls back to the geolocation-based default set by middleware.js, if present
-  return getCookie(STORAGE_KEY) ?? "sr";
-}
-
-export function LanguageProvider({ children }) {
-  const [lang, setLang] = useState(getInitialLang);
-
-  useEffect(() => {
-    window.localStorage.setItem(STORAGE_KEY, lang);
-    document.cookie = `${STORAGE_KEY}=${lang}; path=/; max-age=31536000; samesite=lax`;
-    document.documentElement.lang = lang;
-  }, [lang]);
-
-  const toggleLanguage = () => setLang((l) => (l === "sr" ? "en" : "sr"));
-
+// Language is derived entirely from the URL (see App.jsx's two route trees), not from
+// client storage — deterministic on both the SSG build and the client, so there's no
+// hydration mismatch to reconcile.
+export function LanguageProvider({ lang, children }) {
   const value = {
     lang,
-    setLang,
-    toggleLanguage,
     t: translations[lang],
+    lp: (path) => localize(lang, path),
   };
 
   return (

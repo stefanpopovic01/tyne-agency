@@ -73,7 +73,7 @@ const serviceMeta = [
 ];
 
 export default function Services() {
-  const { t } = useLanguage();
+  const { t, lp } = useLanguage();
   const [active, setActive] = useState(0);
   const services = serviceMeta.map((m, i) => ({
     ...m,
@@ -148,14 +148,14 @@ export default function Services() {
             <h3 className="usluge__panel-title">{s.tagline}</h3>
             <p className="usluge__panel-desc">{s.desc}</p>
 
-            <Link to='/zakazi-call' className="usluge__panel-cta" style={{ "--pc": s.color }}>
+            <Link to={lp('/zakazi-call')} className="usluge__panel-cta" style={{ "--pc": s.color }}>
               {t.services.ctaCampaign}
               <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
                 <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/>
               </svg>
             </Link>
 
-            <Link to='/portfolio' className="usluge__panel-cta portf" style={{ "--pc": s.color }}>
+            <Link to={lp('/portfolio')} className="usluge__panel-cta portf" style={{ "--pc": s.color }}>
               {t.services.ctaPortfolio}
               <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
                 <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/>

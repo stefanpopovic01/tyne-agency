@@ -5,7 +5,7 @@ import "./Faq.css";
 import { useLanguage } from "../../i18n/LanguageContext";
 
 export default function FAQ() {
-  const { t } = useLanguage();
+  const { t, lp } = useLanguage();
   const faqs = t.faq.items;
   const [open, setOpen] = useState(null);
 
@@ -66,7 +66,7 @@ export default function FAQ() {
         {/* Bottom CTA */}
         <div className="faq__bottom">
           <p>{t.faq.bottomText}</p>
-          <Link to='/kontakt' className="faq__cta">
+          <Link to={lp('/kontakt')} className="faq__cta">
             {t.faq.bottomCta}
             <svg width="15" height="15" viewBox="0 0 16 16" fill="none">
               <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/>

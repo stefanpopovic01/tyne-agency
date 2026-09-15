@@ -15,7 +15,7 @@ const pillarIcons = [
 ];
 
 export default function AboutUs() {
-  const { t } = useLanguage();
+  const { t, lp } = useLanguage();
   const pillars = t.aboutUs.pillars.map((p, i) => ({ ...p, icon: pillarIcons[i] }));
   return (
     <section className="onama" id="o-nama">
@@ -48,7 +48,7 @@ export default function AboutUs() {
             </p>
           </div>
 
-          <Link to="/kontakt" className="onama__cta">
+          <Link to={lp("/kontakt")} className="onama__cta">
             {t.aboutUs.cta}
             <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
               <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/>

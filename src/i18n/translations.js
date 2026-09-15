@@ -21,6 +21,18 @@ export const translations = {
         title: "Politika Privatnosti | Tyne Agency",
         description: "Politika privatnosti Tyne Agency – kako prikupljamo, koristimo i štitimo vaše podatke.",
       },
+      success: {
+        title: "Zahtev Primljen | Tyne Agency",
+        description: "Vaš zahtev je uspešno primljen. Tyne Agency će vas uskoro kontaktirati.",
+      },
+      contactSuccess: {
+        title: "Poruka Poslata | Tyne Agency",
+        description: "Vaša poruka je uspešno poslata. Tyne Agency će vas uskoro kontaktirati.",
+      },
+      notFound: {
+        title: "Stranica Nije Pronađena | Tyne Agency",
+        description: "Stranica koju tražite ne postoji ili je premeštena.",
+      },
     },
     header: {
       navHome: "Početna",
@@ -392,6 +404,18 @@ Ukupno je potrošeno $5.326,74, uz ostvarenih preko 2,86 miliona impresija i 766
       privacyPolicy: {
         title: "Privacy Policy | Tyne Agency",
         description: "Tyne Agency's privacy policy – how we collect, use, and protect your data.",
+      },
+      success: {
+        title: "Request Received | Tyne Agency",
+        description: "Your request was received successfully. Tyne Agency will contact you soon.",
+      },
+      contactSuccess: {
+        title: "Message Sent | Tyne Agency",
+        description: "Your message was sent successfully. Tyne Agency will contact you soon.",
+      },
+      notFound: {
+        title: "Page Not Found | Tyne Agency",
+        description: "The page you're looking for doesn't exist or has been moved.",
       },
     },
     header: {

@@ -1,11 +1,13 @@
 import { Link } from "react-router-dom";
 import "./Success.css";
 import { useLanguage } from "../../i18n/LanguageContext";
+import { SEO } from "../../components/SEO/SEO";
 
 export default function Success() {
-  const { t } = useLanguage();
+  const { t, lp } = useLanguage();
   return (
     <div className="success-page">
+      <SEO {...t.seo.success} />
 
       <div className="success-bg" aria-hidden="true">
         <div className="success-glow success-glow--a" />
@@ -29,10 +31,10 @@ export default function Success() {
         </p>
 
         <div className="success-actions">
-          <Link to="/" className="success-btn success-btn--primary">
+          <Link to={lp("/")} className="success-btn success-btn--primary">
             {t.success.btnHome}
           </Link>
-          <Link to="/kontakt" className="success-btn success-btn--outline">
+          <Link to={lp("/kontakt")} className="success-btn success-btn--outline">
             {t.success.btnContact}
           </Link>
         </div>

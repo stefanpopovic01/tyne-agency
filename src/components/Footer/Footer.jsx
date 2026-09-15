@@ -42,18 +42,20 @@ export default function Footer() {
   const year = new Date().getFullYear();
   const navigate = useNavigate();
   const location = useLocation();
-  const { t } = useLanguage();
+  const { t, lp } = useLanguage();
   const { openSettings } = useConsent();
 
   const nav = [
     { label: t.header.navHome, type: "home" },
     { label: t.header.navServices, type: "section", sectionId: "usluge" },
     { label: t.header.navPackages, type: "section", sectionId: "paketi" },
-    { label: t.header.navPortfolio, type: "route", to: "/portfolio" },
+    { label: t.header.navPortfolio, type: "route", to: lp("/portfolio") },
     { label: t.header.navAbout, type: "section", sectionId: "o-nama" },
     { label: "FAQ", type: "section", sectionId: "faq" },
-    { label: t.header.navContact, type: "route", to: "/kontakt" },
+    { label: t.header.navContact, type: "route", to: lp("/kontakt") },
   ];
+
+  const homePath = lp("/");
 
   const scrollToSection = (id) => {
     const el = document.getElementById(id);
@@ -75,19 +77,19 @@ export default function Footer() {
 
   const handleNavClick = (link) => {
     if (link.type === "home") {
-      if (location.pathname === "/") {
+      if (location.pathname === homePath) {
         window.scrollTo({ top: 0, behavior: "smooth" });
       } else {
-        navigate("/");
+        navigate(homePath);
       }
       return;
     }
 
     if (link.type === "section") {
-      if (location.pathname === "/") {
+      if (location.pathname === homePath) {
         scrollToSection(link.sectionId);
       } else {
-        navigate("/");
+        navigate(homePath);
         setTimeout(() => scrollWhenReady(link.sectionId), 80);
       }
     }
@@ -101,7 +103,7 @@ export default function Footer() {
       <div className="footer__inner">
 
         <div className="footer__brand">
-          <Link to="/" className="footer__logo-wrap">
+          <Link to={homePath} className="footer__logo-wrap">
             <img src={logoFull} alt="Tyne Agency" className="footer__logo" />
           </Link>
           <p className="footer__tagline">
@@ -164,14 +166,14 @@ export default function Footer() {
               </a>
             </li>
             <li>
-              <Link to="/zakazi-call" className="footer__link footer__link--icon">
+              <Link to={lp("/zakazi-call")} className="footer__link footer__link--icon">
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 1 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
                 {t.footer.address}
               </Link>
             </li>
           </ul>
 
-          <Link to="/zakazi-call" className="footer__cta">
+          <Link to={lp("/zakazi-call")} className="footer__cta">
             {t.footer.ctaBook}
             <svg width="13" height="13" viewBox="0 0 16 16" fill="none">
               <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round"/>
@@ -185,7 +187,7 @@ export default function Footer() {
         <div className="footer__bottom-inner">
           <span className="footer__copy">© {year} Tyne Agency. {t.footer.rights}</span>
           <div className="footer__legal">
-            <Link to="/politika-privatnosti" className="footer__legal-link">{t.privacyPolicy.eyebrow}</Link>
+            <Link to={lp("/politika-privatnosti")} className="footer__legal-link">{t.privacyPolicy.eyebrow}</Link>
             <button type="button" className="footer__legal-link footer__legal-btn" onClick={openSettings}>
               {t.cookieConsent.footerLink}
             </button>

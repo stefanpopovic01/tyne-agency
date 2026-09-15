@@ -3,19 +3,27 @@ import { Link, useNavigate, useLocation } from "react-router-dom";
 import "./Header.css";
 import logoFull from "../../assets/logo-full-black.png";
 import { useLanguage } from "../../i18n/LanguageContext";
+import { localize, stripLangPrefix } from "../../i18n/langPath";
 
-function LangSwitch({ lang, toggleLanguage, label, className }) {
+function LangSwitch({ lang, pathname, label, className }) {
+  const srPath = stripLangPrefix(pathname);
+  const enPath = localize("en", srPath);
   return (
-    <button
-      type="button"
-      className={`header__lang${className ? ` ${className}` : ""}`}
-      onClick={toggleLanguage}
-      aria-label={label}
-    >
-      <span className={`header__lang-option${lang === "sr" ? " header__lang-option--on" : ""}`}>SR</span>
-      <span className={`header__lang-option${lang === "en" ? " header__lang-option--on" : ""}`}>EN</span>
+    <span className={`header__lang${className ? ` ${className}` : ""}`} aria-label={label}>
+      <Link
+        to={srPath}
+        className={`header__lang-option${lang === "sr" ? " header__lang-option--on" : ""}`}
+      >
+        SR
+      </Link>
+      <Link
+        to={enPath}
+        className={`header__lang-option${lang === "en" ? " header__lang-option--on" : ""}`}
+      >
+        EN
+      </Link>
       <span className={`header__lang-thumb${lang === "en" ? " header__lang-thumb--right" : ""}`} aria-hidden="true" />
-    </button>
+    </span>
   );
 }
 
@@ -24,15 +32,15 @@ export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
   const navigate = useNavigate();
   const location = useLocation();
-  const { lang, toggleLanguage, t } = useLanguage();
+  const { lang, lp, t } = useLanguage();
 
   const navLinks = [
     { label: t.header.navHome, type: "home" },
     { label: t.header.navServices, type: "section", sectionId: "usluge" },
     { label: t.header.navPackages, type: "section", sectionId: "paketi" },
-    { label: t.header.navPortfolio, type: "route", to: "/portfolio" },
+    { label: t.header.navPortfolio, type: "route", to: lp("/portfolio") },
     { label: t.header.navAbout, type: "section", sectionId: "o-nama" },
-    { label: t.header.navContact, type: "route", to: "/kontakt" },
+    { label: t.header.navContact, type: "route", to: lp("/kontakt") },
   ];
 
   useEffect(() => {
@@ -59,23 +67,25 @@ export default function Header() {
     }
   };
 
+  const homePath = lp("/");
+
   const handleNavClick = (link) => {
     setMenuOpen(false);
 
     if (link.type === "home") {
-      if (location.pathname === "/") {
+      if (location.pathname === homePath) {
         window.scrollTo({ top: 0, behavior: "smooth" });
       } else {
-        navigate("/");
+        navigate(homePath);
       }
       return;
     }
 
     if (link.type === "section") {
-      if (location.pathname === "/") {
+      if (location.pathname === homePath) {
         scrollToSection(link.sectionId);
       } else {
-        navigate("/");
+        navigate(homePath);
         setTimeout(() => scrollWhenReady(link.sectionId), 80);
       }
       return;
@@ -87,7 +97,7 @@ export default function Header() {
     <header className={`header${scrolled ? " header--scrolled" : ""}${menuOpen ? " header--menu-open" : ""}`}>
       <div className="header__inner">
 
-        <Link to="/" className="header__logo" onClick={() => setMenuOpen(false)}>
+        <Link to={homePath} className="header__logo" onClick={() => setMenuOpen(false)}>
           <img src={logoFull} alt="Tyne Agency" />
         </Link>
 
@@ -114,9 +124,9 @@ export default function Header() {
           )}
         </nav>
 
-        <LangSwitch lang={lang} toggleLanguage={toggleLanguage} label={t.header.langSwitchLabel} />
+        <LangSwitch lang={lang} pathname={location.pathname} label={t.header.langSwitchLabel} />
 
-        <Link to="/zakazi-call" className="header__cta" onClick={() => setMenuOpen(false)}>
+        <Link to={lp("/zakazi-call")} className="header__cta" onClick={() => setMenuOpen(false)}>
           {t.header.ctaBook}
         </Link>
 
@@ -153,7 +163,7 @@ export default function Header() {
           )
         )}
         <Link
-          to="/zakazi-call"
+          to={lp("/zakazi-call")}
           className="header__cta header__cta--mobile"
           onClick={() => setMenuOpen(false)}
         >

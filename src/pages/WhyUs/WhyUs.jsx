@@ -31,7 +31,7 @@ const koraciIcons = [
 ];
 
 export default function WhyUs() {
-  const { t } = useLanguage();
+  const { t, lp } = useLanguage();
   const razlozi = t.whyUs.reasons.map((r, i) => ({ ...r, icon: razloziIcons[i] }));
   const koraci = t.whyUs.steps.map((k, i) => ({ ...k, num: String(i + 1).padStart(2, "0"), icon: koraciIcons[i] }));
   return (
@@ -62,7 +62,7 @@ export default function WhyUs() {
             <p className="zm__body">
               {t.whyUs.body}
             </p>
-            <Link to='/zakazi-call' className="zm__cta">
+            <Link to={lp('/zakazi-call')} className="zm__cta">
               {t.whyUs.cta}
               <svg width="15" height="15" viewBox="0 0 16 16" fill="none">
                 <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/>

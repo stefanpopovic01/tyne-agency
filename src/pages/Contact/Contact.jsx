@@ -3,11 +3,10 @@ import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import "./Contact.css";
 import { useLanguage } from "../../i18n/LanguageContext";
-import { useSEO } from "../../hooks/useSEO";
+import { SEO } from "../../components/SEO/SEO";
 
 export default function Contact() {
-  const { t } = useLanguage();
-  useSEO(t.seo.contact);
+  const { t, lp } = useLanguage();
   const [form, setForm] = useState({
     ime: "", email: "", telefon: "", kompanija: "", poruka: "",
   });
@@ -20,6 +19,7 @@ export default function Contact() {
 
   return (
     <div className="kontakt-page">
+      <SEO {...t.seo.contact} />
       <div className="kontakt-inner">
 
         {/* ── LEFT — info ── */}
@@ -73,7 +73,7 @@ export default function Contact() {
                 <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round"/>
               </svg>
             </a> */}
-            <Link to='/zakazi-call' className="k-dark-block-btn">
+            <Link to={lp('/zakazi-call')} className="k-dark-block-btn">
               {t.contact.darkBlockBtn}
               <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
                 <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round"/>
@@ -105,7 +105,7 @@ export default function Contact() {
                     });
 
                     setSent(true);
-                    navigate("/kontakt/uspesno");
+                    navigate(lp("/kontakt/uspesno"));
                   }}
                 >
                   <div className="k-row">

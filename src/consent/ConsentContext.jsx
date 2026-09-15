@@ -29,7 +29,10 @@ function applyConsentToGtag(consent) {
 }
 
 export function ConsentProvider({ children }) {
-  const [consent, setConsent] = useState(readStoredConsent);
+  // Always starts null (no decision) — matching what the SSG build always prerenders
+  // with (no `window` at build time) — so the initial client render matches the
+  // server HTML and React can hydrate without a mismatch on the banner's visibility.
+  const [consent, setConsent] = useState(null);
   const [settingsOpen, setSettingsOpen] = useState(false);
 
   const persist = (next) => {
@@ -46,11 +49,17 @@ export function ConsentProvider({ children }) {
   const openSettings = () => setSettingsOpen(true);
   const closeSettings = () => setSettingsOpen(false);
 
-  // Mount-only: re-apply any previously stored decision in case index.html's inline
-  // consent-update ran before this provider (or the state) was ready.
+  // Mount-only: restore any previously stored decision now that we're on the client,
+  // and re-apply it to gtag in case index.html's inline consent-update ran before
+  // this provider (or the state) was ready.
   useEffect(() => {
-    if (consent) applyConsentToGtag(consent);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+    const stored = readStoredConsent();
+    if (stored) {
+      // Intentional post-hydration correction, not a sync loop — see comment above.
+      // eslint-disable-next-line react-hooks/set-state-in-effect
+      setConsent(stored);
+      applyConsentToGtag(stored);
+    }
   }, []);
 
   const value = {

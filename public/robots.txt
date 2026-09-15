@@ -4,5 +4,8 @@ Allow: /
 Disallow: /zakazi-call/uspesno
 Disallow: /uspeh
 Disallow: /kontakt/uspesno
+Disallow: /en/zakazi-call/uspesno
+Disallow: /en/uspeh
+Disallow: /en/kontakt/uspesno
 
 Sitemap: https://tyne.rs/sitemap.xml

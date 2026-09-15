@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { useLanguage } from "../../i18n/LanguageContext";
 
 export default function Hero() {
-  const { t } = useLanguage();
+  const { t, lp } = useLanguage();
   return (
     <section className="hero-section">
 
@@ -80,7 +80,7 @@ export default function Hero() {
                 <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/>
               </svg>
             </button>
-            <Link to="/zakazi-call" className="hbtn hbtn--primary">{t.hero.ctaBook}</Link>
+            <Link to={lp("/zakazi-call")} className="hbtn hbtn--primary">{t.hero.ctaBook}</Link>
           </div>
 
           <div className="hero-stats">

@@ -1,11 +1,12 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import "./Portfolio.css";
 import googleCase from "../../assets/p-google1.webp";
 import metaCase from "../../assets/p-meta1.webp";
 import metaLogo from "../../assets/meta.png";
 import googleLogo from "../../assets/google.png";
 import { useLanguage } from "../../i18n/LanguageContext";
-import { useSEO } from "../../hooks/useSEO";
+import { SEO } from "../../components/SEO/SEO";
 
 const channelsMeta = [
   {
@@ -29,8 +30,7 @@ const channelsMeta = [
 ];
 
 export default function Portfolio() {
-  const { t } = useLanguage();
-  useSEO(t.seo.portfolio);
+  const { t, lp } = useLanguage();
   const channels = channelsMeta.map((m, ci) => ({
     ...m,
     cases: t.portfolio.channels[ci].cases.map((c, i) => ({
@@ -53,6 +53,7 @@ export default function Portfolio() {
 
   return (
     <div className="portfolio-page">
+      <SEO {...t.seo.portfolio} />
       <div className="pf-inner">
 
         {/* Header */}
@@ -162,12 +163,12 @@ export default function Portfolio() {
               ))}
             </div>
 
-            <a href="/zakazi-call" className="pf-cta">
+            <Link to={lp("/zakazi-call")} className="pf-cta">
               {t.portfolio.ctaCall}
               <svg width="15" height="15" viewBox="0 0 16 16" fill="none">
                 <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round"/>
               </svg>
-            </a>
+            </Link>
           </div>
 
         </div>
