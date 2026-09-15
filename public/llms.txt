@@ -1,0 +1,22 @@
+# Tyne Agency
+
+> Performance marketing agencija iz Beograda, Srbija. Kreiramo i optimizujemo Google Ads i Meta Ads kampanje za biznise koji žele merljiv rast — više leadova, prodaja i prihoda.
+> Performance marketing agency based in Belgrade, Serbia. We build and optimize Google Ads and Meta Ads campaigns for businesses that want measurable growth — more leads, sales, and revenue.
+
+## Usluge / Services
+- Google Ads (Search, Shopping, Performance Max)
+- Meta Ads (Facebook & Instagram)
+- Tehnički setup i atribucija: Google Tag Manager, Google Analytics 4, Meta Pixel, Conversions API (CAPI)
+- Strategija, optimizacija kampanja i izveštavanje
+
+## Ključne stranice / Key pages
+- [Početna / Home](https://tyne.rs/): pregled usluga, paketa i pristupa
+- [Portfolio](https://tyne.rs/portfolio): rezultati kampanja sa konkretnim brojevima (impresije, konverzije, ROAS)
+- [Kontakt / Contact](https://tyne.rs/kontakt): kontakt forma
+- [Zakaži Call / Book a Call](https://tyne.rs/zakazi-call): besplatna 30-minutna konsultacija
+
+## Kontakt / Contact
+- Email: info@tyne.rs
+- Telefon / Phone: +381 69 1258 825
+- Lokacija / Location: Beograd, Srbija
+- Instagram: https://www.instagram.com/tyne.agency

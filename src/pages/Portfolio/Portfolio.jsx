@@ -5,6 +5,7 @@ import metaCase from "../../assets/p-meta1.webp";
 import metaLogo from "../../assets/meta.png";
 import googleLogo from "../../assets/google.png";
 import { useLanguage } from "../../i18n/LanguageContext";
+import { useSEO } from "../../hooks/useSEO";
 
 const channelsMeta = [
   {
@@ -29,6 +30,7 @@ const channelsMeta = [
 
 export default function Portfolio() {
   const { t } = useLanguage();
+  useSEO(t.seo.portfolio);
   const channels = channelsMeta.map((m, ci) => ({
     ...m,
     cases: t.portfolio.channels[ci].cases.map((c, i) => ({

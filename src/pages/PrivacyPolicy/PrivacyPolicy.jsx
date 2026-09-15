@@ -1,9 +1,11 @@
 import "./PrivacyPolicy.css";
 import { useLanguage } from "../../i18n/LanguageContext";
 import { useConsent } from "../../consent/ConsentContext";
+import { useSEO } from "../../hooks/useSEO";
 
 export default function PrivacyPolicy() {
   const { t } = useLanguage();
+  useSEO(t.seo.privacyPolicy);
   const { openSettings } = useConsent();
   const p = t.privacyPolicy;
 

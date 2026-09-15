@@ -1,5 +1,27 @@
 export const translations = {
   sr: {
+    seo: {
+      home: {
+        title: "Tyne Agency | Performance Marketing Agencija za Google i Meta Oglašavanje",
+        description: "Tyne Agency je performance marketing agencija iz Beograda. Kreiramo i optimizujemo Google Ads i Meta Ads kampanje koje donose merljive rezultate – više leadova, prodaja i prihoda.",
+      },
+      contact: {
+        title: "Kontakt | Tyne Agency",
+        description: "Javite nam se za besplatnu konsultaciju. Tyne Agency – performance marketing agencija u Beogradu za Google i Meta oglašavanje.",
+      },
+      scheduleCall: {
+        title: "Zakaži Besplatan Call | Tyne Agency",
+        description: "Zakažite besplatnih 30 minuta sa našim timom i saznajte kako možemo da unapredimo vaše Google i Meta kampanje.",
+      },
+      portfolio: {
+        title: "Portfolio i Rezultati | Tyne Agency",
+        description: "Pogledajte konkretne rezultate naših Google Ads i Meta Ads kampanja – brojevi, ROAS i studije slučaja.",
+      },
+      privacyPolicy: {
+        title: "Politika Privatnosti | Tyne Agency",
+        description: "Politika privatnosti Tyne Agency – kako prikupljamo, koristimo i štitimo vaše podatke.",
+      },
+    },
     header: {
       navHome: "Početna",
       navServices: "Usluge",
@@ -350,6 +372,28 @@ Ukupno je potrošeno $5.326,74, uz ostvarenih preko 2,86 miliona impresija i 766
   },
 
   en: {
+    seo: {
+      home: {
+        title: "Tyne Agency | Performance Marketing Agency for Google & Meta Ads",
+        description: "Tyne Agency is a performance marketing agency helping businesses grow with data-driven Google Ads and Meta Ads campaigns – more leads, sales, and revenue.",
+      },
+      contact: {
+        title: "Contact | Tyne Agency",
+        description: "Get in touch for a free consultation. Tyne Agency – a performance marketing agency for Google and Meta advertising.",
+      },
+      scheduleCall: {
+        title: "Book a Free Call | Tyne Agency",
+        description: "Book a free 30-minute call with our team and find out how we can grow your Google and Meta campaigns.",
+      },
+      portfolio: {
+        title: "Portfolio & Results | Tyne Agency",
+        description: "See real results from our Google Ads and Meta Ads campaigns – numbers, ROAS, and case studies.",
+      },
+      privacyPolicy: {
+        title: "Privacy Policy | Tyne Agency",
+        description: "Tyne Agency's privacy policy – how we collect, use, and protect your data.",
+      },
+    },
     header: {
       navHome: "Home",
       navServices: "Services",

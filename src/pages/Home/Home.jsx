@@ -7,8 +7,12 @@ import Packages from '../Packages/Packages'
 import WhyUs from '../WhyUs/WhyUs'
 import FAQ from '../Faq/Faq'
 import CTA from '../Cta/Cta'
+import { useSEO } from '../../hooks/useSEO'
+import { useLanguage } from '../../i18n/LanguageContext'
 
 function Home() {
+  const { t } = useLanguage()
+  useSEO(t.seo.home)
 
   return (
     <>

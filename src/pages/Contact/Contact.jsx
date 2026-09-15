@@ -3,9 +3,11 @@ import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import "./Contact.css";
 import { useLanguage } from "../../i18n/LanguageContext";
+import { useSEO } from "../../hooks/useSEO";
 
 export default function Contact() {
   const { t } = useLanguage();
+  useSEO(t.seo.contact);
   const [form, setForm] = useState({
     ime: "", email: "", telefon: "", kompanija: "", poruka: "",
   });

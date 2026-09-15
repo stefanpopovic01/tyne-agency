@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./ScheduleCall.css";
 import { useLanguage } from "../../i18n/LanguageContext";
+import { useSEO } from "../../hooks/useSEO";
 
 // Generate next 14 available days (skip Sundays & Saturday)
 function getAvailableDays(dayNames, monthNames) {
@@ -28,6 +29,7 @@ const timeSlots = ["09:00","10:00","11:00","12:00","13:00", "14:00","15:00","16:
 
 export default function ScheduleCall() {
   const { t } = useLanguage();
+  useSEO(t.seo.scheduleCall);
   const steps = t.scheduleCall.steps;
   const days = getAvailableDays(t.scheduleCall.dayNames, t.scheduleCall.monthNames);
   const [selectedDay, setSelectedDay] = useState(null);
