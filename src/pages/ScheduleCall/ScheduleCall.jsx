@@ -152,6 +152,7 @@ export default function ScheduleCall() {
                 </div>
 
                 {/* Budget */}
+                {/* Previous design (button grid) — restore by swapping this block back in:
                 <div className="zc-section-label">{t.scheduleCall.budgetLabel}</div>
                 <div className="zc-budgets">
                   {t.scheduleCall.budgetOptions.map((b, i) => (
@@ -164,6 +165,22 @@ export default function ScheduleCall() {
                       {b}
                     </button>
                   ))}
+                </div>
+                */}
+                <div className="zc-field">
+                  <label className="zc-label" htmlFor="zc-budzet">{t.scheduleCall.budgetLabel}</label>
+                  <select
+                    id="zc-budzet"
+                    className="zc-input zc-select"
+                    required
+                    value={selectedBudget === null ? "" : selectedBudget}
+                    onChange={(e) => setSelectedBudget(e.target.value === "" ? null : Number(e.target.value))}
+                  >
+                    <option value="" disabled>{t.scheduleCall.budgetPlaceholder}</option>
+                    {t.scheduleCall.budgetOptions.map((b, i) => (
+                      <option key={i} value={i}>{b}</option>
+                    ))}
+                  </select>
                 </div>
 
                 <div className="zc-field">
