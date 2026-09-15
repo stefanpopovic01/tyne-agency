@@ -15,6 +15,7 @@ import ScrollToTop from './components/ScrollToTop/ScrollToTop'
 import Portfolio from './pages/Portfolio/Portfolio'
 import NotFound from './components/NotFound/Notfound'
 import Success from './pages/Success/Success'
+import Uspeh from './pages/Uspeh/Uspeh'
 import ContactSuccess from './pages/ContactSuccess/ContactSuccess'
 import PrivacyPolicy from './pages/PrivacyPolicy/PrivacyPolicy'
 import CookieBanner from './components/CookieBanner/CookieBanner'
@@ -35,6 +36,7 @@ function App() {
         <Route path="/zakazi-call" element={<ScheduleCall />} />
         <Route path="/portfolio" element={<Portfolio />} />
         <Route path="/zakazi-call/uspesno" element={<Success />} />
+        <Route path="/zakazi-call/uspeh" element={<Uspeh />} />
         <Route path="/kontakt/uspesno" element={<ContactSuccess />} />
         <Route path="/politika-privatnosti" element={<PrivacyPolicy />} />
         <Route path="*" element={<NotFound />} />

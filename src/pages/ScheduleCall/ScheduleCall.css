@@ -180,6 +180,41 @@
   cursor: not-allowed;
 }
 
+/* Budget */
+.zc-budgets {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.zc-budget {
+  padding: 10px 8px;
+  background: #fff;
+  border: 1.5px solid rgba(11,91,242,0.1);
+  border-radius: 9px;
+  font-size: 0.84rem;
+  font-weight: 600;
+  color: #2d3748;
+  font-family: inherit;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.4,0,0.2,1);
+  letter-spacing: 0.02em;
+}
+
+.zc-budget:hover {
+  border-color: rgba(11,91,242,0.3);
+  color: #0b5bf2;
+  background: rgba(11,91,242,0.04);
+}
+
+.zc-budget--on {
+  background: #0b5bf2;
+  border-color: #0b5bf2;
+  color: #fff !important;
+  box-shadow: 0 3px 12px rgba(11,91,242,0.28);
+}
+
 /* Selected summary */
 .zc-selected-summary {
   display: flex;
@@ -541,7 +576,8 @@
   .zc-inner { padding: 0 20px; gap: 32px; }
   .zc-right { padding: 28px 22px; }
   .zc-left-inner { padding: 32px 24px; }
-  .zc-days  { grid-template-columns: repeat(4, 1fr); }
-  .zc-times { grid-template-columns: repeat(4, 1fr); }
-  .zc-row   { grid-template-columns: 1fr; }
+  .zc-days    { grid-template-columns: repeat(4, 1fr); }
+  .zc-times   { grid-template-columns: repeat(4, 1fr); }
+  .zc-budgets { grid-template-columns: 1fr; }
+  .zc-row     { grid-template-columns: 1fr; }
 }

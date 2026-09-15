@@ -32,12 +32,13 @@ export default function ScheduleCall() {
   const days = getAvailableDays(t.scheduleCall.dayNames, t.scheduleCall.monthNames);
   const [selectedDay, setSelectedDay] = useState(null);
   const [selectedTime, setSelectedTime] = useState(null);
+  const [selectedBudget, setSelectedBudget] = useState(null);
   const [form, setForm] = useState({ ime: "", email: "", telefon: "", kompanija: "", napomena: "" });
   const [sent, setSent] = useState(false);
 
   const handle = (e) => setForm((f) => ({ ...f, [e.target.name]: e.target.value }));
 
-  const canSubmit = selectedDay !== null && selectedTime !== null && form.ime && form.email && form.telefon;
+  const canSubmit = selectedDay !== null && selectedTime !== null && selectedBudget !== null && form.ime && form.email && form.telefon;
   const navigate = useNavigate();
 
   return (
@@ -66,6 +67,10 @@ export default function ScheduleCall() {
                     data.append("vreme", timeSlots[selectedTime]);
                   }
 
+                  if (selectedBudget !== null) {
+                    data.append("budzet", t.scheduleCall.budgetOptions[selectedBudget]);
+                  }
+
                   await fetch("https://formspree.io/f/xojzjayl", {
                     method: "POST",
                     body: data,
@@ -73,7 +78,7 @@ export default function ScheduleCall() {
                   });
 
                   setSent(true);
-                  navigate("/zakazi-call/uspesno");
+                  navigate(selectedBudget === 0 ? "/zakazi-call/uspeh" : "/zakazi-call/uspesno");
                 }}
               >
                 {/* Date picker */}
@@ -121,6 +126,21 @@ export default function ScheduleCall() {
                     {days[selectedDay].day}, {days[selectedDay].num}. {days[selectedDay].month} {t.scheduleCall.atWord} {timeSlots[selectedTime]}
                   </div>
                 )}
+
+                {/* Budget */}
+                <div className="zc-section-label">{t.scheduleCall.budgetLabel}</div>
+                <div className="zc-budgets">
+                  {t.scheduleCall.budgetOptions.map((b, i) => (
+                    <button
+                      key={i}
+                      type="button"
+                      className={`zc-budget${selectedBudget === i ? " zc-budget--on" : ""}`}
+                      onClick={() => setSelectedBudget(i)}
+                    >
+                      {b}
+                    </button>
+                  ))}
+                </div>
 
                 <div className="zc-divider" />
 
@@ -180,7 +200,7 @@ export default function ScheduleCall() {
                 {t.scheduleCall.successTextPre}<strong>{days[selectedDay]?.day}, {days[selectedDay]?.num}. {days[selectedDay]?.month}</strong>{t.scheduleCall.successTextAt}<strong>{timeSlots[selectedTime]}</strong>.
                 <br />{t.scheduleCall.successContactPre}{form.email}{t.scheduleCall.successContactPost}
               </p>
-              <button className="zc-submit" style={{ maxWidth: "240px" }} onClick={() => { setSent(false); setSelectedDay(null); setSelectedTime(null); }}>
+              <button className="zc-submit" style={{ maxWidth: "240px" }} onClick={() => { setSent(false); setSelectedDay(null); setSelectedTime(null); setSelectedBudget(null); }}>
                 {t.scheduleCall.successBtn}
               </button>
             </div>
