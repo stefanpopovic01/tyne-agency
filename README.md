@@ -2,7 +2,6 @@
 
 Modern performance marketing website built with React + Vite.
 
-
 ---
 
 ## Pages
