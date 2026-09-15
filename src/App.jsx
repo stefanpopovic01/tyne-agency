@@ -36,7 +36,7 @@ function App() {
         <Route path="/zakazi-call" element={<ScheduleCall />} />
         <Route path="/portfolio" element={<Portfolio />} />
         <Route path="/zakazi-call/uspesno" element={<Success />} />
-        <Route path="/zakazi-call/uspeh" element={<Uspeh />} />
+        <Route path="/uspeh" element={<Uspeh />} />
         <Route path="/kontakt/uspesno" element={<ContactSuccess />} />
         <Route path="/politika-privatnosti" element={<PrivacyPolicy />} />
         <Route path="*" element={<NotFound />} />

@@ -78,7 +78,7 @@ export default function ScheduleCall() {
                   });
 
                   setSent(true);
-                  navigate(selectedBudget === 0 ? "/zakazi-call/uspeh" : "/zakazi-call/uspesno");
+                  navigate(selectedBudget === 0 ? "/uspeh" : "/zakazi-call/uspesno");
                 }}
               >
                 {/* Date picker */}
@@ -127,21 +127,6 @@ export default function ScheduleCall() {
                   </div>
                 )}
 
-                {/* Budget */}
-                <div className="zc-section-label">{t.scheduleCall.budgetLabel}</div>
-                <div className="zc-budgets">
-                  {t.scheduleCall.budgetOptions.map((b, i) => (
-                    <button
-                      key={i}
-                      type="button"
-                      className={`zc-budget${selectedBudget === i ? " zc-budget--on" : ""}`}
-                      onClick={() => setSelectedBudget(i)}
-                    >
-                      {b}
-                    </button>
-                  ))}
-                </div>
-
                 <div className="zc-divider" />
 
                 {/* Personal info */}
@@ -164,6 +149,21 @@ export default function ScheduleCall() {
                 <div className="zc-field">
                   <label className="zc-label" htmlFor="zc-kompanija">{t.scheduleCall.companyLabel}</label>
                   <input id="zc-kompanija" name="kompanija" type="text" placeholder={t.scheduleCall.companyPlaceholder} className="zc-input" value={form.kompanija} onChange={handle} required/>
+                </div>
+
+                {/* Budget */}
+                <div className="zc-section-label">{t.scheduleCall.budgetLabel}</div>
+                <div className="zc-budgets">
+                  {t.scheduleCall.budgetOptions.map((b, i) => (
+                    <button
+                      key={i}
+                      type="button"
+                      className={`zc-budget${selectedBudget === i ? " zc-budget--on" : ""}`}
+                      onClick={() => setSelectedBudget(i)}
+                    >
+                      {b}
+                    </button>
+                  ))}
                 </div>
 
                 <div className="zc-field">
