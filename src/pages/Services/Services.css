@@ -176,8 +176,11 @@
 }
 
 .usluge__big-icon img {
-  width: 43px;
-  height: 37px;
+  max-width: 43px;
+  max-height: 37px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
 }
 
 .usluge__tag-pill {

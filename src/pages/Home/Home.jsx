@@ -8,6 +8,7 @@ import WhyUs from '../WhyUs/WhyUs'
 import FAQ from '../Faq/Faq'
 import CTA from '../Cta/Cta'
 import { SEO } from '../../components/SEO/SEO'
+import { buildFaqSchema } from '../../components/SEO/faqSchema'
 import { useLanguage } from '../../i18n/LanguageContext'
 
 function Home() {
@@ -15,7 +16,7 @@ function Home() {
 
   return (
     <>
-        <SEO {...t.seo.home} />
+        <SEO {...t.seo.home} jsonLd={buildFaqSchema(t.faq.items)} />
         <Hero/>
         <AboutUs/>
         <Services/>

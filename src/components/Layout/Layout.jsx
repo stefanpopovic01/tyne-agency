@@ -12,7 +12,9 @@ export default function Layout({ lang }) {
       <ConsentProvider>
         <ScrollToTop />
         <Header/>
-        <Outlet/>
+        <main>
+          <Outlet/>
+        </main>
         <Footer/>
         <CookieBanner />
       </ConsentProvider>
