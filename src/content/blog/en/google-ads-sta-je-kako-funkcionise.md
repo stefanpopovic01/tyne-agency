@@ -17,6 +17,8 @@ Unlike traditional advertising, where you pay to have your message seen by as ma
 
 In this guide, we cover the fundamentals of Google Ads — from your first ad to measuring results.
 
+![A Google Ads ad in search results — example of a sponsored result](/blog/google-ads-sta-je-kako-funkcionise/google-ads-primer-pretrage.webp)
+
 ## What is Google Ads?
 
 Google Ads is Google's advertising platform, allowing companies to pay to promote products and services to users on Google Search and across other Google channels.
@@ -35,7 +37,7 @@ When a user runs a relevant search, Google evaluates which ads can be shown and 
 
 That's why simply paying more doesn't guarantee the top spot. Results are influenced by ad relevance, landing page experience quality, competition, and other factors in Google's ad auction system.
 
-![How Google Ads works — from search to conversion](/blog/google-ads-sta-je-kako-funkcionise/diagram-kako-funkcionise.webp)
+![How Google Ads works — from search to conversion](/blog/google-ads-sta-je-kako-funkcionise/kako-funkcionise-aukcija.webp)
 
 ## What are keywords?
 
@@ -46,8 +48,6 @@ If you run an agency offering Google Ads services, relevant searches might inclu
 If you run a plumbing company, relevant searches might include "plumber London," "emergency plumber," and "plumber near me."
 
 The goal isn't to show your ad for as many searches as possible. The goal is to show it for relevant searches that have the potential to bring in the right customer.
-
-![The Google Ads ecosystem — Search, Shopping, Performance Max, Display, and Remarketing](/blog/google-ads-sta-je-kako-funkcionise/ekosistem-kanali.webp)
 
 ## Search campaigns: when a user is actively looking for your product or service
 
@@ -81,6 +81,8 @@ Display can serve different roles, including remarketing, building awareness, pr
 
 For example, a user might visit an online store, look at a product, but not complete a purchase. Later, they might see an ad for that same brand while browsing other sites. That's one example of remarketing.
 
+![The Google Ads ecosystem — Search, Shopping, Performance Max, Display, and Remarketing](/blog/google-ads-sta-je-kako-funkcionise/google-ads-ekosistem.webp)
+
 ## How much does Google Ads cost?
 
 There's no universal price.
@@ -98,8 +100,6 @@ Budget depends on market size, average cost per click, competition, the value of
 A local business targeting a single city may need a completely different budget than an e-commerce company selling nationwide.
 
 That's why budget should be viewed in the context of your business economics, not just as a fixed monthly number.
-
-![Google Ads metrics — CPC, CTR, Conversion, and ROAS explained with formulas](/blog/google-ads-sta-je-kako-funkcionise/metrike-cpc-ctr-roas.webp)
 
 ## What is CPC?
 
@@ -127,6 +127,18 @@ For e-commerce businesses, the main conversion will often be a purchase. For a l
 
 That's why it's essential to define what a successful outcome actually means for your specific business.
 
+## What is ROAS?
+
+ROAS — Return on Ad Spend — shows how much revenue you generate relative to what you spend on ads.
+
+If you spend €1,000 on Google Ads and generate €5,000 in revenue, your ROAS is 5x.
+
+But ROAS isn't the same as profit. If margins are thin, product costs are high, or there are other operating costs, a campaign with a high ROAS isn't automatically the most profitable one.
+
+That's why ROAS should be viewed in the context of your overall business economics.
+
+![Google Ads metrics — CPC, CTR, Conversion, and ROAS explained with formulas](/blog/google-ads-sta-je-kako-funkcionise/metrike-cpc-ctr-roas.webp)
+
 ## Why is conversion tracking so important?
 
 One of the biggest mistakes in Google Ads advertising is looking only at clicks and impressions.
@@ -138,16 +150,6 @@ That's why conversion tracking needs to be set up correctly. Depending on the bu
 Tools like Google Analytics 4 (GA4) and Google Tag Manager (GTM) are often part of that tracking infrastructure. For e-commerce in particular, it's important — wherever possible — to track not just the number of purchases but the actual revenue value generated.
 
 ![Conversion tracking — following the full user journey from ad to revenue](/blog/google-ads-sta-je-kako-funkcionise/conversion-tracking.webp)
-
-## What is ROAS?
-
-ROAS — Return on Ad Spend — shows how much revenue you generate relative to what you spend on ads.
-
-If you spend €1,000 on Google Ads and generate €5,000 in revenue, your ROAS is 5x.
-
-But ROAS isn't the same as profit. If margins are thin, product costs are high, or there are other operating costs, a campaign with a high ROAS isn't automatically the most profitable one.
-
-That's why ROAS should be viewed in the context of your overall business economics.
 
 ## Google Ads isn't "set it and forget it"
 

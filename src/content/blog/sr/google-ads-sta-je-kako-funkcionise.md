@@ -17,6 +17,8 @@ Za razliku od tradicionalnog oglašavanja, gde plaćate da vašu poruku vidi št
 
 U ovom vodiču objašnjavamo osnove Google Ads oglašavanja, od prvog oglasa do merenja rezultata.
 
+![Google Ads oglas u rezultatima pretrage — primer sponzorisanog oglasa](/blog/google-ads-sta-je-kako-funkcionise/google-ads-primer-pretrage.webp)
+
 ## Šta je Google Ads?
 
 Google Ads je platforma kompanije Google koja omogućava kompanijama da plaćeno promovišu proizvode i usluge korisnicima na Google pretraživaču i drugim Google kanalima.
@@ -35,7 +37,7 @@ Kada korisnik izvrši relevantnu pretragu, Google procenjuje koji oglasi mogu bi
 
 Zato nije dovoljno samo platiti više da biste bili na prvom mestu. Na rezultate utiču relevantnost oglasa, kvalitet iskustva na odredišnoj stranici, konkurencija i drugi faktori Google-ovog sistema aukcije oglasa.
 
-![Kako Google Ads funkcioniše — od pretrage do konverzije](/blog/google-ads-sta-je-kako-funkcionise/diagram-kako-funkcionise.webp)
+![Kako Google Ads funkcioniše — od pretrage do konverzije](/blog/google-ads-sta-je-kako-funkcionise/kako-funkcionise-aukcija.webp)
 
 ## Šta su ključne reči (keywords)?
 
@@ -46,8 +48,6 @@ Ako imate agenciju koja pruža Google Ads usluge, relevantne pretrage mogu biti 
 Ako imate vodoinstalatersku firmu, relevantne pretrage mogu biti „vodoinstalater Beograd", „hitno vodoinstalater" i „vodoinstalater Novi Beograd".
 
 Cilj nije da se oglas prikazuje za što veći broj pretraga. Cilj je da se prikazuje za relevantne pretrage koje imaju potencijal da dovedu pravog kupca.
-
-![Google Ads ekosistem — Search, Shopping, Performance Max, Display i Remarketing](/blog/google-ads-sta-je-kako-funkcionise/ekosistem-kanali.webp)
 
 ## Search kampanje: kada korisnik aktivno traži vaš proizvod ili uslugu
 
@@ -81,6 +81,8 @@ Display može imati različite uloge, uključujući remarketing, izgradnju aware
 
 Na primer, korisnik može posetiti online prodavnicu, pogledati proizvod, ali ne obaviti kupovinu. Kasnije može videti oglas tog brenda dok posećuje druge sajtove. To je jedan od primera remarketinga.
 
+![Google Ads ekosistem — Search, Shopping, Performance Max, Display i Remarketing](/blog/google-ads-sta-je-kako-funkcionise/google-ads-ekosistem.webp)
+
 ## Koliko košta Google Ads?
 
 Ne postoji univerzalna cena.
@@ -98,8 +100,6 @@ Budžet zavisi od veličine tržišta, prosečne cene klika, konkurencije, vredn
 Lokalnom biznisu koji cilja samo jedan grad može biti potreban potpuno drugačiji budžet od e-commerce kompanije koja želi da prodaje širom Srbije.
 
 Zato budžet treba posmatrati u kontekstu ekonomije biznisa, a ne samo kao fiksan mesečni iznos.
-
-![Google Ads metrike — CPC, CTR, Conversion i ROAS objašnjeni kroz formule](/blog/google-ads-sta-je-kako-funkcionise/metrike-cpc-ctr-roas.webp)
 
 ## Šta je CPC?
 
@@ -127,6 +127,18 @@ Kod e-commerce biznisa glavna konverzija će često biti purchase. Kod lokalnog 
 
 Zbog toga je veoma važno definisati šta za konkretan biznis znači uspešan rezultat.
 
+## Šta je ROAS?
+
+ROAS — Return on Ad Spend — pokazuje koliko prihoda generišete u odnosu na iznos potrošen na oglase.
+
+Ako potrošite 1.000 € na Google Ads i ostvarite 5.000 € prihoda, ROAS je 5x.
+
+Ali ROAS nije isto što i profit. Ako su marže niske, troškovi proizvoda visoki ili postoje drugi operativni troškovi, kampanja sa visokim ROAS-om ne mora automatski biti najprofitabilnija.
+
+Zato ROAS treba posmatrati u kontekstu celokupne ekonomije biznisa.
+
+![Google Ads metrike — CPC, CTR, Conversion i ROAS objašnjeni kroz formule](/blog/google-ads-sta-je-kako-funkcionise/metrike-cpc-ctr-roas.webp)
+
 ## Zašto je conversion tracking toliko važan?
 
 Jedna od najvećih grešaka u Google Ads oglašavanju jeste posmatranje samo klikova i impresija.
@@ -138,16 +150,6 @@ Zato je potrebno pravilno postaviti conversion tracking. U zavisnosti od biznisa
 Alati poput Google Analytics 4 (GA4) i Google Tag Manager-a (GTM) mogu biti deo tracking infrastrukture. Za e-commerce je posebno važno da se, kada je moguće, ne prati samo broj kupovina već i vrednost ostvarenog prihoda.
 
 ![Conversion tracking — praćenje celog puta korisnika od oglasa do prihoda](/blog/google-ads-sta-je-kako-funkcionise/conversion-tracking.webp)
-
-## Šta je ROAS?
-
-ROAS — Return on Ad Spend — pokazuje koliko prihoda generišete u odnosu na iznos potrošen na oglase.
-
-Ako potrošite 1.000 € na Google Ads i ostvarite 5.000 € prihoda, ROAS je 5x.
-
-Ali ROAS nije isto što i profit. Ako su marže niske, troškovi proizvoda visoki ili postoje drugi operativni troškovi, kampanja sa visokim ROAS-om ne mora automatski biti najprofitabilnija.
-
-Zato ROAS treba posmatrati u kontekstu celokupne ekonomije biznisa.
 
 ## Google Ads nije „podesi i zaboravi"
 
