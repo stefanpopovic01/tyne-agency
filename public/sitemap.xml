@@ -34,6 +34,22 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://tyne.rs/blog</loc>
+    <xhtml:link rel="alternate" hreflang="sr" href="https://tyne.rs/blog" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://tyne.rs/en/blog" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tyne.rs/blog" />
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://tyne.rs/en/blog</loc>
+    <xhtml:link rel="alternate" hreflang="sr" href="https://tyne.rs/blog" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://tyne.rs/en/blog" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tyne.rs/blog" />
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://tyne.rs/kontakt</loc>
     <xhtml:link rel="alternate" hreflang="sr" href="https://tyne.rs/kontakt" />
     <xhtml:link rel="alternate" hreflang="en" href="https://tyne.rs/en/kontakt" />
@@ -80,5 +96,21 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://tyne.rs/politika-privatnosti" />
     <changefreq>yearly</changefreq>
     <priority>0.1</priority>
+  </url>
+  <url>
+    <loc>https://tyne.rs/blog/google-ads-sta-je-kako-funkcionise</loc>
+    <xhtml:link rel="alternate" hreflang="sr" href="https://tyne.rs/blog/google-ads-sta-je-kako-funkcionise" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://tyne.rs/en/blog/google-ads-sta-je-kako-funkcionise" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tyne.rs/blog/google-ads-sta-je-kako-funkcionise" />
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://tyne.rs/en/blog/google-ads-sta-je-kako-funkcionise</loc>
+    <xhtml:link rel="alternate" hreflang="sr" href="https://tyne.rs/blog/google-ads-sta-je-kako-funkcionise" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://tyne.rs/en/blog/google-ads-sta-je-kako-funkcionise" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tyne.rs/blog/google-ads-sta-je-kako-funkcionise" />
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url>
 </urlset>

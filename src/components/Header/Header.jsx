@@ -40,6 +40,7 @@ export default function Header() {
     { label: t.header.navPackages, type: "section", sectionId: "paketi" },
     { label: t.header.navPortfolio, type: "route", to: lp("/portfolio") },
     { label: t.header.navAbout, type: "section", sectionId: "o-nama" },
+    { label: t.header.navBlog, type: "route", to: lp("/blog") },
     { label: t.header.navContact, type: "route", to: lp("/kontakt") },
   ];
 

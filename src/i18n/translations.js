@@ -17,6 +17,10 @@ export const translations = {
         title: "Portfolio i Rezultati | Tyne Agency",
         description: "Pogledajte konkretne rezultate naših Google Ads i Meta Ads kampanja – brojevi, ROAS i studije slučaja.",
       },
+      blog: {
+        title: "Blog | Tyne Agency",
+        description: "Saveti, uvidi i studije slučaja iz performance marketinga – Google Ads, Meta Ads i digitalni rast.",
+      },
       privacyPolicy: {
         title: "Politika Privatnosti | Tyne Agency",
         description: "Politika privatnosti Tyne Agency – kako prikupljamo, koristimo i štitimo vaše podatke.",
@@ -40,6 +44,7 @@ export const translations = {
       navPackages: "Paketi",
       navPortfolio: "Portfolio",
       navAbout: "O nama",
+      navBlog: "Blog",
       navContact: "Kontakt",
       ctaBook: "Zakaži Call",
       openMenu: "Otvori meni",
@@ -329,6 +334,16 @@ Ukupno je potrošeno $5.326,74, uz ostvarenih preko 2,86 miliona impresija i 766
       btnHome: "Idi na početnu",
       btnContact: "Kontaktiraj nas",
     },
+    blog: {
+      eyebrow: "Blog",
+      titleLine1: "Uvidi i saveti",
+      titleEm: "iz performance marketinga.",
+      lead: "Pišemo o Google Ads, Meta Ads i strategijama rasta — iz prakse, za vaš biznis.",
+      searchPlaceholder: "Pretraži po naslovu...",
+      emptyState: "Uskoro stižu prvi članci.",
+      noResults: "Nema članaka koji odgovaraju pretrazi.",
+      backToBlog: "Nazad na blog",
+    },
     cookieConsent: {
       title: "Koristimo kolačiće",
       message:
@@ -401,6 +416,10 @@ Ukupno je potrošeno $5.326,74, uz ostvarenih preko 2,86 miliona impresija i 766
         title: "Portfolio & Results | Tyne Agency",
         description: "See real results from our Google Ads and Meta Ads campaigns – numbers, ROAS, and case studies.",
       },
+      blog: {
+        title: "Blog | Tyne Agency",
+        description: "Tips, insights, and case studies from performance marketing – Google Ads, Meta Ads, and digital growth.",
+      },
       privacyPolicy: {
         title: "Privacy Policy | Tyne Agency",
         description: "Tyne Agency's privacy policy – how we collect, use, and protect your data.",
@@ -424,6 +443,7 @@ Ukupno je potrošeno $5.326,74, uz ostvarenih preko 2,86 miliona impresija i 766
       navPackages: "Packages",
       navPortfolio: "Portfolio",
       navAbout: "About Us",
+      navBlog: "Blog",
       navContact: "Contact",
       ctaBook: "Book a Call",
       openMenu: "Open menu",
@@ -712,6 +732,16 @@ A total of $5,326.74 was spent, achieving over 2.86 million impressions and reac
       desc: "The page you're looking for doesn't exist or has been moved.",
       btnHome: "Go to homepage",
       btnContact: "Contact us",
+    },
+    blog: {
+      eyebrow: "Blog",
+      titleLine1: "Insights and tips",
+      titleEm: "from performance marketing.",
+      lead: "We write about Google Ads, Meta Ads, and growth strategy — from practice, for your business.",
+      searchPlaceholder: "Search by title...",
+      emptyState: "First articles coming soon.",
+      noResults: "No articles match your search.",
+      backToBlog: "Back to blog",
     },
     cookieConsent: {
       title: "We use cookies",

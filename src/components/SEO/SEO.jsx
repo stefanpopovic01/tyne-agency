@@ -30,6 +30,12 @@ export function SEO({ title, description, jsonLd }) {
       <link rel="alternate" hrefLang="sr" href={`${SITE_URL}${srPath}`} />
       <link rel="alternate" hrefLang="en" href={`${SITE_URL}${enPath}`} />
       <link rel="alternate" hrefLang="x-default" href={`${SITE_URL}${srPath}`} />
+      <link
+        rel="alternate"
+        type="application/rss+xml"
+        title="Tyne Agency Blog"
+        href={`${SITE_URL}${lang === "en" ? "/en/rss.xml" : "/rss.xml"}`}
+      />
       {jsonLd && (
         <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
       )}
