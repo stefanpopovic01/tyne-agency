@@ -4,7 +4,6 @@ seoTitle: "Google Ads: Šta je, kako funkcioniše i kako se koristi?"
 date: "2026-09-18"
 excerpt: "Saznajte šta je Google Ads, kako funkcioniše, koje vrste kampanja postoje, koliko košta oglašavanje i kako se mere rezultati Google Ads kampanja."
 cover: "/blog/google-ads-sta-je-kako-funkcionise/cover.webp"
-author: "Nemanja Popović"
 keywords: "Google Ads, šta je Google Ads, kako funkcioniše Google Ads, Google Ads oglašavanje, Google reklame, Google oglasi, Google Ads kampanja, Google Ads cena, Google Ads budžet, Google Ads Srbija, Google Ads agencija, Google Ads za male firme, Google Ads za e-commerce, Google Ads tracking, ROAS Google Ads, Google Search Ads"
 ---
 

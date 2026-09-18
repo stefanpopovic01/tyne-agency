@@ -6,15 +6,6 @@ import { getPost } from "../../blog/posts";
 import { buildArticleSchema } from "../../components/SEO/articleSchema";
 import NotFound from "../../components/NotFound/Notfound";
 
-function formatDate(iso, lang) {
-  const d = new Date(iso);
-  return d.toLocaleDateString(lang === "sr" ? "sr-RS" : "en-GB", {
-    year: "numeric",
-    month: "long",
-    day: "numeric",
-  });
-}
-
 export default function BlogPost() {
   const { slug } = useParams();
   const { t, lp, lang } = useLanguage();
@@ -37,15 +28,6 @@ export default function BlogPost() {
           </svg>
           {t.blog.backToBlog}
         </Link>
-
-        <div className="blog-post-meta">
-          <span className="blog-post-date">{formatDate(post.date, lang)}</span>
-          {post.author && (
-            <span className="blog-post-author">
-              {post.author}{post.authorRole ? ` · ${post.authorRole}` : ""}
-            </span>
-          )}
-        </div>
 
         <h1 className="blog-post-title">{post.title}</h1>
 

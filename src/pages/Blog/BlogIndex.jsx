@@ -5,15 +5,6 @@ import { useLanguage } from "../../i18n/LanguageContext";
 import { SEO } from "../../components/SEO/SEO";
 import { getPosts } from "../../blog/posts";
 
-function formatDate(iso, lang) {
-  const d = new Date(iso);
-  return d.toLocaleDateString(lang === "sr" ? "sr-RS" : "en-GB", {
-    year: "numeric",
-    month: "long",
-    day: "numeric",
-  });
-}
-
 export default function BlogIndex() {
   const { t, lp, lang } = useLanguage();
   const posts = getPosts(lang);
@@ -62,7 +53,6 @@ export default function BlogIndex() {
                   </div>
                 )}
                 <div className="blog-card-body">
-                  <span className="blog-card-date">{formatDate(post.date, lang)}</span>
                   <h2 className="blog-card-title">{post.title}</h2>
                   {post.excerpt && <p className="blog-card-excerpt">{post.excerpt}</p>}
                 </div>

@@ -336,7 +336,7 @@ Ukupno je potrošeno $5.326,74, uz ostvarenih preko 2,86 miliona impresija i 766
     },
     blog: {
       eyebrow: "Blog",
-      titleLine1: "Uvidi i saveti",
+      titleLine1: "Saveti i uputstva",
       titleEm: "iz performance marketinga.",
       lead: "Pišemo o Google Ads, Meta Ads i strategijama rasta — iz prakse, za vaš biznis.",
       searchPlaceholder: "Pretraži po naslovu...",

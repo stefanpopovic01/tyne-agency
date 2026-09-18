@@ -4,7 +4,6 @@ seoTitle: "Google Ads: What It Is and How It Works"
 date: "2026-09-18"
 excerpt: "Learn what Google Ads is, how it works, what campaign types exist, how much advertising costs, and how Google Ads results are measured."
 cover: "/blog/google-ads-sta-je-kako-funkcionise/cover.webp"
-author: "Nemanja Popović"
 keywords: "Google Ads, what is Google Ads, how Google Ads works, Google Ads advertising, Google Ads campaign, Google Ads price, Google Ads budget, Google Ads agency, Google Ads for small businesses, Google Ads for e-commerce, Google Ads tracking, ROAS Google Ads, Google Search Ads"
 ---
 
