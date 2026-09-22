@@ -98,6 +98,38 @@
     <priority>0.1</priority>
   </url>
   <url>
+    <loc>https://tyne.rs/blog/koliko-kosta-google-ads-oglasavanje-u-srbiji</loc>
+    <xhtml:link rel="alternate" hreflang="sr" href="https://tyne.rs/blog/koliko-kosta-google-ads-oglasavanje-u-srbiji" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://tyne.rs/en/blog/koliko-kosta-google-ads-oglasavanje-u-srbiji" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tyne.rs/blog/koliko-kosta-google-ads-oglasavanje-u-srbiji" />
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://tyne.rs/en/blog/koliko-kosta-google-ads-oglasavanje-u-srbiji</loc>
+    <xhtml:link rel="alternate" hreflang="sr" href="https://tyne.rs/blog/koliko-kosta-google-ads-oglasavanje-u-srbiji" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://tyne.rs/en/blog/koliko-kosta-google-ads-oglasavanje-u-srbiji" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tyne.rs/blog/koliko-kosta-google-ads-oglasavanje-u-srbiji" />
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://tyne.rs/blog/google-ads-ili-meta-ads</loc>
+    <xhtml:link rel="alternate" hreflang="sr" href="https://tyne.rs/blog/google-ads-ili-meta-ads" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://tyne.rs/en/blog/google-ads-ili-meta-ads" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tyne.rs/blog/google-ads-ili-meta-ads" />
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://tyne.rs/en/blog/google-ads-ili-meta-ads</loc>
+    <xhtml:link rel="alternate" hreflang="sr" href="https://tyne.rs/blog/google-ads-ili-meta-ads" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://tyne.rs/en/blog/google-ads-ili-meta-ads" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tyne.rs/blog/google-ads-ili-meta-ads" />
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://tyne.rs/blog/meta-ads-sta-je-kako-funkcionise</loc>
     <xhtml:link rel="alternate" hreflang="sr" href="https://tyne.rs/blog/meta-ads-sta-je-kako-funkcionise" />
     <xhtml:link rel="alternate" hreflang="en" href="https://tyne.rs/en/blog/meta-ads-sta-je-kako-funkcionise" />
