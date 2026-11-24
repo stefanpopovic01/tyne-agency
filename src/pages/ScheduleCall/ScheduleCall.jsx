@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import "./ScheduleCall.css";
 import { useLanguage } from "../../i18n/LanguageContext";
 import { SEO } from "../../components/SEO/SEO";
@@ -41,12 +41,25 @@ export default function ScheduleCall() {
   const [selectedDay, setSelectedDay] = useState(null);
   const [selectedTime, setSelectedTime] = useState(null);
   const [selectedBudget, setSelectedBudget] = useState(null);
+  // "ads" (default — the core service) or "web" (website only: no site/budget fields).
+  const [service, setService] = useState("ads");
+  const wantsAds = service === "ads";
+
+  // Deep link from the Websites service: /zakazi-call?usluga=web preselects "website only".
+  // Read after mount so the prerendered HTML (no query string) hydrates cleanly.
+  const { search } = useLocation();
+  useEffect(() => {
+    if (new URLSearchParams(search).get("usluga") === "web") {
+      // eslint-disable-next-line react-hooks/set-state-in-effect
+      setService("web");
+    }
+  }, [search]);
   const [form, setForm] = useState({ ime: "", email: "", telefon: "", kompanija: "", napomena: "" });
   const [sent, setSent] = useState(false);
 
   const handle = (e) => setForm((f) => ({ ...f, [e.target.name]: e.target.value }));
 
-  const canSubmit = selectedDay !== null && selectedTime !== null && selectedBudget !== null && form.ime && form.email && form.telefon;
+  const canSubmit = selectedDay !== null && selectedTime !== null && (!wantsAds || selectedBudget !== null) && form.ime && form.email && form.telefon;
   const navigate = useNavigate();
 
   return (
@@ -76,7 +89,9 @@ export default function ScheduleCall() {
                     data.append("vreme", timeSlots[selectedTime]);
                   }
 
-                  if (selectedBudget !== null) {
+                  data.append("usluga", wantsAds ? t.scheduleCall.serviceAds : t.scheduleCall.serviceWeb);
+
+                  if (wantsAds && selectedBudget !== null) {
                     data.append("budzet", t.scheduleCall.budgetOptions[selectedBudget]);
                   }
 
@@ -87,7 +102,11 @@ export default function ScheduleCall() {
                   });
 
                   setSent(true);
-                  navigate(lp(selectedBudget === 0 ? "/uspeh" : "/zakazi-call/uspesno"));
+                  // /zakazi-call/uspesno = qualified ad lead (tracked as the ads conversion).
+                  // Website-only and lowest-budget requests go to /uspeh so they don't
+                  // feed Google/Meta campaign optimization.
+                  const qualifiedAdLead = wantsAds && selectedBudget !== 0;
+                  navigate(lp(qualifiedAdLead ? "/zakazi-call/uspesno" : "/uspeh"));
                 }}
               >
                 {/* Date picker */}
@@ -138,6 +157,25 @@ export default function ScheduleCall() {
 
                 <div className="zc-divider" />
 
+                {/* Service: ads (default) or website only */}
+                <div className="zc-field">
+                  <span className="zc-label" id="zc-usluga-label">{t.scheduleCall.serviceLabel}</span>
+                  <div className="zc-service" role="radiogroup" aria-labelledby="zc-usluga-label">
+                    {[["ads", t.scheduleCall.serviceAds], ["web", t.scheduleCall.serviceWeb]].map(([value, label]) => (
+                      <button
+                        key={value}
+                        type="button"
+                        role="radio"
+                        aria-checked={service === value}
+                        className={`zc-service-opt${service === value ? " zc-service-opt--on" : ""}`}
+                        onClick={() => setService(value)}
+                      >
+                        {label}
+                      </button>
+                    ))}
+                  </div>
+                </div>
+
                 {/* Personal info */}
                 <div className="zc-row">
                   <div className="zc-field">
@@ -155,6 +193,8 @@ export default function ScheduleCall() {
                   <input id="zc-telefon" name="telefon" type="tel" required placeholder={t.scheduleCall.phonePlaceholder} className="zc-input" value={form.telefon} onChange={handle}/>
                 </div>
 
+                {wantsAds && (
+                <>
                 <div className="zc-field">
                   <label className="zc-label" htmlFor="zc-kompanija">{t.scheduleCall.companyLabel}</label>
                   <input id="zc-kompanija" name="kompanija" type="text" placeholder={t.scheduleCall.companyPlaceholder} className="zc-input" value={form.kompanija} onChange={handle} required/>
@@ -192,6 +232,9 @@ export default function ScheduleCall() {
                   </select>
                 </div>
 
+                </>
+                )}
+
                 <div className="zc-field">
                   <label className="zc-label" htmlFor="zc-napomena">{t.scheduleCall.noteLabel}</label>
                 <textarea
@@ -200,7 +243,7 @@ export default function ScheduleCall() {
                   required
                   rows={3}
                   maxLength={1000}
-                  placeholder={t.scheduleCall.notePlaceholder}
+                  placeholder={wantsAds ? t.scheduleCall.notePlaceholder : t.scheduleCall.notePlaceholderWeb}
                   className="zc-input zc-textarea"
                   value={form.napomena}
                   onChange={handle}
@@ -226,7 +269,7 @@ export default function ScheduleCall() {
                 {t.scheduleCall.successTextPre}<strong>{days[selectedDay]?.day}, {days[selectedDay]?.num}. {days[selectedDay]?.month}</strong>{t.scheduleCall.successTextAt}<strong>{timeSlots[selectedTime]}</strong>.
                 <br />{t.scheduleCall.successContactPre}{form.email}{t.scheduleCall.successContactPost}
               </p>
-              <button className="zc-submit" style={{ maxWidth: "240px" }} onClick={() => { setSent(false); setSelectedDay(null); setSelectedTime(null); setSelectedBudget(null); }}>
+              <button className="zc-submit" style={{ maxWidth: "240px" }} onClick={() => { setSent(false); setSelectedDay(null); setSelectedTime(null); setSelectedBudget(null); setService("ads"); }}>
                 {t.scheduleCall.successBtn}
               </button>
             </div>

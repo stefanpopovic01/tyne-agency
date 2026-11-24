@@ -148,8 +148,12 @@ export default function Services() {
             <h3 className="usluge__panel-title">{s.tagline}</h3>
             <p className="usluge__panel-desc">{s.desc}</p>
 
-            <Link to={lp('/zakazi-call')} className="usluge__panel-cta" style={{ "--pc": s.color }}>
-              {t.services.ctaCampaign}
+            <Link
+              to={lp('/zakazi-call') + (s.id === 'web-development' ? '?usluga=web' : '')}
+              className="usluge__panel-cta"
+              style={{ "--pc": s.color }}
+            >
+              {s.id === 'web-development' ? t.services.ctaWebsite : t.services.ctaCampaign}
               <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
                 <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/>
               </svg>

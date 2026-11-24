@@ -602,3 +602,36 @@
   .zc-budgets { grid-template-columns: 1fr; }
   .zc-row     { grid-template-columns: 1fr; }
 }
+/* Service switch: ads (default) / website only */
+.zc-service {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4px;
+  padding: 4px;
+  border-radius: 11px;
+  background: #f3f5f9;
+  border: 1.5px solid rgba(11,91,242,0.08);
+}
+
+.zc-service-opt {
+  border: 0;
+  border-radius: 8px;
+  background: transparent;
+  padding: 9px 10px;
+  font-family: inherit;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #718096;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
+}
+.zc-service-opt:hover { color: #0d0f14; }
+.zc-service-opt--on {
+  background: #fff;
+  color: #0b5bf2;
+  box-shadow: 0 1px 3px rgba(13,15,20,0.08), 0 0 0 1px rgba(11,91,242,0.15);
+}
+.zc-service-opt:focus-visible {
+  outline: 2px solid #0b5bf2;
+  outline-offset: 2px;
+}
