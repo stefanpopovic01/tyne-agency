@@ -115,7 +115,7 @@ export const translations = {
         },
       ],
       ctaCampaign: "Pokreni kampanju",
-      ctaWebsite: "Zatraži ponudu za sajt",
+      ctaWebsite: "Zatraži ponudu",
       ctaPortfolio: "Portfolio",
     },
     packages: {
@@ -544,7 +544,7 @@ Ukupno je potrošeno $5.326,74, uz ostvarenih preko 2,86 miliona impresija i 766
         },
       ],
       ctaCampaign: "Launch a campaign",
-      ctaWebsite: "Get a website quote",
+      ctaWebsite: "Get a quote",
       ctaPortfolio: "Portfolio",
     },
     packages: {
