@@ -380,3 +380,52 @@ button.header__mobile-link:hover {
   color: var(--blue);
   background: var(--blue-light);
 }
+/* ── Overlay variant: transparent glass over the homepage hero video ── */
+.header--overlay,
+.header--overlay.header--scrolled {
+  background: linear-gradient(180deg, rgba(3, 6, 18, 0.45) 0%, rgba(3, 6, 18, 0.15) 100%);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-color: rgba(255, 255, 255, 0.08);
+  box-shadow: none;
+}
+
+.header--overlay .header__logo img {
+  mix-blend-mode: normal;
+  filter: brightness(0) invert(1);
+}
+
+.header--overlay .header__nav-link,
+.header--overlay button.header__nav-link {
+  color: rgba(255, 255, 255, 0.78);
+}
+.header--overlay .header__nav-link:hover,
+.header--overlay button.header__nav-link:hover {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.08);
+}
+.header--overlay .header__nav-link::after {
+  background: #9dd6ff;
+}
+
+.header--overlay .header__lang {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+.header--overlay .header__lang-option {
+  color: rgba(255, 255, 255, 0.75);
+}
+.header--overlay .header__lang-option--on {
+  color: #fff;
+}
+
+.header--overlay .header__burger span {
+  background: #fff;
+}
+
+.header__logo img,
+.header__nav-link,
+.header__lang {
+  transition: color var(--transition), background var(--transition),
+    border-color var(--transition), filter var(--transition);
+}

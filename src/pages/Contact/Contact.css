@@ -76,7 +76,7 @@
   display: flex;
   align-items: center;
   gap: 14px;
-  padding: 16px 18px;
+  padding: 16px 20px;
   background: #f9fafb;
   border: 1px solid rgba(11,91,242,0.1);
   border-radius: 14px;
@@ -90,20 +90,20 @@
   transform: translateX(4px);
 }
 
-.k-card-icon {
-  flex-shrink: 0;
-  width: 40px; height: 40px;
-  border-radius: 10px;
-  background: rgba(11,91,242,0.08);
-  color: #0b5bf2;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: all 0.22s ease;
+.k-card > div {
+  flex: 1;
+  min-width: 0;
 }
-.k-card:hover .k-card-icon {
-  background: #0b5bf2;
-  color: #fff;
+
+.k-card-arrow {
+  flex-shrink: 0;
+  color: #0b5bf2;
+  opacity: 0.35;
+  transition: opacity 0.22s ease, transform 0.22s ease;
+}
+.k-card:hover .k-card-arrow {
+  opacity: 1;
+  transform: translateX(3px);
 }
 
 .k-card-label {
@@ -115,7 +115,7 @@
   margin-bottom: 2px;
 }
 .k-card-value {
-  font-size: 0.875rem;
+  font-size: 1rem;
   font-weight: 600;
   color: #0d0f14;
 }

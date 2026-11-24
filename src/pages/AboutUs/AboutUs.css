@@ -175,22 +175,21 @@
   transform: translateY(-3px);
 }
 
-.onama__card-icon {
+.onama__card-num {
   flex-shrink: 0;
-  width: 44px;
-  height: 44px;
-  border-radius: 12px;
-  background: rgba(11, 91, 242, 0.08);
+  min-width: 34px;
+  padding-top: 1px;
+  font-size: 0.95rem;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  font-variant-numeric: tabular-nums;
   color: #0b5bf2;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: background 0.22s ease;
+  opacity: 0.45;
+  transition: opacity 0.22s ease;
 }
 
-.onama__card:hover .onama__card-icon {
-  background: #0b5bf2;
-  color: #fff;
+.onama__card:hover .onama__card-num {
+  opacity: 1;
 }
 
 .onama__card-label {

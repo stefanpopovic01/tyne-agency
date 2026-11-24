@@ -44,11 +44,29 @@ export default function Header() {
     { label: t.header.navContact, type: "route", to: lp("/kontakt") },
   ];
 
+  // On the homepage the header floats transparently over the hero video
+  // until the hero has scrolled away underneath it.
+  const homePath = lp("/");
+  const isHome = location.pathname === homePath;
+  const [overHero, setOverHero] = useState(true);
+
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 20);
-    window.addEventListener("scroll", onScroll);
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
+    const onScroll = () => {
+      setScrolled(window.scrollY > 20);
+      const hero = document.querySelector(".hero");
+      const limit = hero ? hero.offsetHeight - 72 : 0;
+      setOverHero(window.scrollY < limit);
+    };
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("resize", onScroll);
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      window.removeEventListener("resize", onScroll);
+    };
+  }, [location.pathname]);
+
+  const overlay = isHome && overHero && !menuOpen;
 
   const scrollToSection = (id) => {
     const el = document.getElementById(id);
@@ -67,8 +85,6 @@ export default function Header() {
       setTimeout(() => scrollWhenReady(id, attempts + 1), 80);
     }
   };
-
-  const homePath = lp("/");
 
   const handleNavClick = (link) => {
     setMenuOpen(false);
@@ -95,7 +111,7 @@ export default function Header() {
 
   return (
     <>
-    <header className={`header${scrolled ? " header--scrolled" : ""}${menuOpen ? " header--menu-open" : ""}`}>
+    <header className={`header${scrolled ? " header--scrolled" : ""}${overlay ? " header--overlay" : ""}${menuOpen ? " header--menu-open" : ""}`}>
       <div className="header__inner">
 
         <Link to={homePath} className="header__logo" onClick={() => setMenuOpen(false)}>

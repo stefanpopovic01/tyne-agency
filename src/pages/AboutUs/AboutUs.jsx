@@ -2,21 +2,9 @@ import "./AboutUs.css";
 import { Link } from "react-router-dom";
 import { useLanguage } from "../../i18n/LanguageContext";
 
-const pillarIcons = [
-  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round">
-    <path d="M3 3v18h18"/><path d="M7 16l4-6 4 4 4-7"/>
-  </svg>,
-  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round">
-    <circle cx="12" cy="12" r="3"/><path d="M12 2v3m0 14v3M2 12h3m14 0h3m-3.3-6.7-2.1 2.1M8.4 15.6l-2.1 2.1m0-11.4 2.1 2.1m5.1 5.1 2.1 2.1"/>
-  </svg>,
-  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round">
-    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/><path d="M8 12l2.5 2.5L16 9"/>
-  </svg>,
-];
-
 export default function AboutUs() {
   const { t, lp } = useLanguage();
-  const pillars = t.aboutUs.pillars.map((p, i) => ({ ...p, icon: pillarIcons[i] }));
+  const pillars = t.aboutUs.pillars;
   return (
     <section className="onama" id="o-nama">
 
@@ -60,7 +48,7 @@ export default function AboutUs() {
         <div className="onama__right">
           {pillars.map((p, i) => (
             <div className="onama__card" key={i} style={{ "--i": i }}>
-              <div className="onama__card-icon">{p.icon}</div>
+              <span className="onama__card-num" aria-hidden="true">{String(i + 1).padStart(2, "0")}</span>
               <div>
                 <div className="onama__card-label">{p.label}</div>
                 <div className="onama__card-desc">{p.desc}</div>

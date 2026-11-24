@@ -155,7 +155,7 @@ export default function Services() {
               </svg>
             </Link>
 
-            <Link to={lp('/portfolio')} className="usluge__panel-cta portf" style={{ "--pc": s.color }}>
+            <Link to={lp('/portfolio') + ({ meta: '?tab=meta', 'web-development': '?tab=web' }[s.id] || '')} className="usluge__panel-cta portf" style={{ "--pc": s.color }}>
               {t.services.ctaPortfolio}
               <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
                 <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/>

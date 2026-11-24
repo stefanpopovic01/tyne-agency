@@ -69,11 +69,6 @@ export const translations = {
       statCampaigns: "Kampanja",
       statAdspend: "Ad spend",
       statRoas: "Avg. ROAS",
-      dashLabel: "Campaign overview",
-      dashLeads: "Leads",
-      dashRoas: "ROAS",
-      dashCpa: "CPA",
-      miniLabel: "Mesečni prihod",
     },
     aboutUs: {
       eyebrow: "O nama",
@@ -273,6 +268,36 @@ export const translations = {
       zoom: "Uvećaj",
       imageComingSoon: "Slika uskoro",
       ctaCall: "Zakaži besplatan call",
+      web: {
+        tab: "Web sajtovi",
+        lead: "Neki od sajtova koje smo nedavno dizajnirali i razvili — od kompletnih prezentacija sa katalogom proizvoda do sajtova sa rezervacijama.",
+        hoverHint: "Pređite mišem za skrol",
+        viewFull: "Pogledaj celu stranicu",
+        visit: "Poseti sajt",
+        desktop: "Desktop",
+        mobile: "Mobilni",
+        close: "Zatvori",
+        projects: [
+          {
+            industry: "Industrijska oprema",
+            title: "Mlazmatik — FALCH Srbija",
+            text: "Sajt za ovlašćenog distributera FALCH visokopritisnih mašina. Pregledan katalog mašina sa tehničkim specifikacijama, stranice primena, servis i demonstracije — napravljen da kupcu olakša izbor i brzo dovede do upita.",
+            tags: ["UX/UI dizajn", "Katalog proizvoda", "Upit za ponudu", "SEO"],
+          },
+          {
+            industry: "Beauty salon",
+            title: "Glow Atelier Rijeka",
+            text: "Elegantna prezentacija kozmetičkog salona u Rijeci. Tretmani, Head Spa rituali i transparentan cenovnik, sa rezervacijom termina dostupnom iz svakog dela stranice.",
+            tags: ["UX/UI dizajn", "Rezervacije", "Cenovnik", "SEO"],
+          },
+          {
+            industry: "Poliklinika",
+            title: "Orešković Rehab & Aesthetic Clinic",
+            text: "Sajt poliklinike sa lokacijama u Zagrebu i Opatiji. Premium vizuelni identitet, pregled tretmana, cenovnik, rezultati pre/posle i recenzije pacijenata — sve usmereno na poverenje i zakazivanje konsultacija.",
+            tags: ["UX/UI dizajn", "Rezultati pre/posle", "Rezervacije", "SEO"],
+          },
+        ],
+      },
       channels: [
         {
           cases: [
@@ -468,11 +493,6 @@ Ukupno je potrošeno $5.326,74, uz ostvarenih preko 2,86 miliona impresija i 766
       statCampaigns: "Campaigns",
       statAdspend: "Ad spend",
       statRoas: "Avg. ROAS",
-      dashLabel: "Campaign overview",
-      dashLeads: "Leads",
-      dashRoas: "ROAS",
-      dashCpa: "CPA",
-      miniLabel: "Monthly revenue",
     },
     aboutUs: {
       eyebrow: "About Us",
@@ -672,6 +692,36 @@ Ukupno je potrošeno $5.326,74, uz ostvarenih preko 2,86 miliona impresija i 766
       zoom: "Zoom in",
       imageComingSoon: "Image coming soon",
       ctaCall: "Book a free call",
+      web: {
+        tab: "Websites",
+        lead: "Some of the websites we've recently designed and built — from full company sites with product catalogs to sites with online booking.",
+        hoverHint: "Hover to scroll",
+        viewFull: "View full page",
+        visit: "Visit site",
+        desktop: "Desktop",
+        mobile: "Mobile",
+        close: "Close",
+        projects: [
+          {
+            industry: "Industrial equipment",
+            title: "Mlazmatik — FALCH Serbia",
+            text: "A website for the authorized distributor of FALCH high-pressure machines. A clear machine catalog with technical specs, application pages, service, and demos — built to make choosing easy and turn visitors into inquiries.",
+            tags: ["UX/UI design", "Product catalog", "Quote requests", "SEO"],
+          },
+          {
+            industry: "Beauty salon",
+            title: "Glow Atelier Rijeka",
+            text: "An elegant website for a beauty salon in Rijeka. Treatments, Head Spa rituals, and transparent pricing, with appointment booking available from every part of the page.",
+            tags: ["UX/UI design", "Booking", "Pricing", "SEO"],
+          },
+          {
+            industry: "Polyclinic",
+            title: "Orešković Rehab & Aesthetic Clinic",
+            text: "A polyclinic website with locations in Zagreb and Opatija. A premium visual identity, treatment overview, pricing, before/after results, and patient reviews — all focused on building trust and booking consultations.",
+            tags: ["UX/UI design", "Before/after results", "Booking", "SEO"],
+          },
+        ],
+      },
       channels: [
         {
           cases: [

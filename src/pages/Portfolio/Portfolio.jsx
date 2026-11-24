@@ -1,10 +1,12 @@
-import { useState } from "react";
-import { Link } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { Link, useLocation } from "react-router-dom";
 import "./Portfolio.css";
 import googleCase from "../../assets/p-google1.webp";
 import metaCase from "../../assets/p-meta1.webp";
 import metaLogo from "../../assets/meta.png";
 import googleLogo from "../../assets/google.png";
+import webLogo from "../../assets/web-logo.png";
+import WebShowcase from "./WebShowcase";
 import { useLanguage } from "../../i18n/LanguageContext";
 import { SEO } from "../../components/SEO/SEO";
 
@@ -38,11 +40,34 @@ export default function Portfolio() {
       image: m.images[i],
     })),
   }));
+  // Websites tab lives after the ad channels (index === channels.length).
+  const tabs = [
+    ...channels.map((ch) => ({ id: ch.id, label: ch.label, color: ch.color, icon: ch.icon })),
+    { id: "web", label: t.portfolio.web.tab, color: "#0b5bf2", icon: webLogo },
+  ];
+  const webIndex = channels.length;
+
   const [activeChannel, setActiveChannel] = useState(0);
   const [activeCase, setActiveCase] = useState(0);
   const [lightboxOpen, setLightboxOpen] = useState(false);
 
-  const channel = channels[activeChannel];
+  // Deep link: /portfolio?tab=web|google|meta. Read after mount so the
+  // prerendered HTML (no query string) hydrates without a mismatch.
+  const { search } = useLocation();
+  useEffect(() => {
+    const id = new URLSearchParams(search).get("tab");
+    const i = tabs.findIndex((tab) => tab.id === id);
+    if (i >= 0) {
+      // Intentional post-hydration sync from the URL (see comment above).
+      // eslint-disable-next-line react-hooks/set-state-in-effect
+      setActiveChannel(i);
+      setActiveCase(0);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [search]);
+
+  const isWeb = activeChannel === webIndex;
+  const channel = channels[isWeb ? 0 : activeChannel];
   const currentCase = channel.cases[activeCase];
   const hasMultiple = channel.cases.length > 1;
 
@@ -70,7 +95,7 @@ export default function Portfolio() {
 
         {/* Channel tabs */}
         <div className="pf-tabs">
-          {channels.map((ch, i) => (
+          {tabs.map((ch, i) => (
             <button
               key={ch.id}
               className={`pf-tab${activeChannel === i ? " pf-tab--on" : ""}`}
@@ -83,7 +108,10 @@ export default function Portfolio() {
           ))}
         </div>
 
+        {isWeb && <WebShowcase key="web" />}
+
         {/* Case study */}
+        {!isWeb && (
         <div className="pf-case" key={`${activeChannel}-${activeCase}`}>
 
           {/* Left — image */}
@@ -172,10 +200,11 @@ export default function Portfolio() {
           </div>
 
         </div>
+        )}
       </div>
 
       {/* Lightbox */}
-      {lightboxOpen && currentCase.image && (
+      {!isWeb && lightboxOpen && currentCase.image && (
         <div className="pf-lightbox" onClick={() => setLightboxOpen(false)}>
           <button className="pf-lightbox-close" onClick={() => setLightboxOpen(false)}>
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
